@@ -22,7 +22,7 @@ submitForm(){
 console.log("..."+JSON.stringify(this.contactForm.value))
 }
 downloadResume():void{
- const resumeUrl = 'assets/J_DHARANI_RESUME.pdf'
+ const resumeUrl = './assets/J_DHARANI_RESUME.pdf'
  this.httpClient.get(resumeUrl,{responseType:'blob'}).subscribe((blob)=>{
   saveAs(blob, 'J_Dharani_Resume.pdf');
  })
