@@ -14,3 +14,14 @@ font-size: medium;
 .project{
     height: 100%;
 }
+@media screen and (max-width:600px) {
+    .aboutMeText{
+        margin: 0 22% 6% 0;
+        line-height: 35px;
+    }
+    .aboutMeDetail{
+        font-family:cursive;
+        margin-left: 2%;
+    }
+    
+}

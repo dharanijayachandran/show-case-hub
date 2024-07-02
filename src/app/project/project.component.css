@@ -20,3 +20,17 @@
 .content .work-list img:hover{
     border: 2px solid rgb(236, 20, 20);
 }
+
+/* Small Screen */
+
+@media screen and (max-width:600px){
+    .content{
+        display: block;
+    }
+    .work-list{
+        margin: 9% 0 5% 5%;
+    }
+    .heading{
+        margin: 0 0 0 30%;
+    }
+}

@@ -72,3 +72,23 @@ nav ul li a::after {
 }
 
 
+/* Small screen */
+
+@media screen and (max-width:600px) {
+    .header{line-height: 31px;}
+    .fullContainer{height: 61%;}
+    .imageContainer {
+        width: 200px;
+        height: 200px;
+        border-radius: 0; 
+        margin-right: 7%;
+    }
+    .imageContainer img {
+        border-radius: 0;
+    }
+    .imageContainer:hover{
+        border: 1px solid #ddd; 
+        transform: scale(1.05); 
+        box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.2); 
+    }
+}

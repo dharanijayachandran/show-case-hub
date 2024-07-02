@@ -42,3 +42,16 @@ form input,textarea{
 .submitButton:hover{
     transform: translate(15px);
     }
+/* Small Screen */
+@media screen and (max-width:600px) {
+    .downloadBtn{
+        margin: 5% 5% 9% 0;
+    }
+    .contact-right{
+        margin-left: -3%;
+    }
+    .submitButton{
+        width: 39%;
+    }
+    
+}
