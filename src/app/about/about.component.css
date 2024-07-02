@@ -1,0 +1,16 @@
+.aboutMeDetail{
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 3px;
+}
+
+.tabSet.container header{
+    font-weight: bold;
+    margin-top: 13px;
+    color: rgb(227, 222, 222);
+}
+.tab-content{
+font-size: medium;
+}
+.project{
+    height: 100%;
+}

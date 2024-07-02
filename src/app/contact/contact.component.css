@@ -1,0 +1,44 @@
+.container{
+    margin-top: 2%;
+}
+.contactmailnum{
+    margin: 8% 0 7% 0;
+}
+
+.contact p i{
+    margin-right: 10px;
+    color: rgb(2, 205, 202);
+}
+
+.social-icons i{
+    color: white;
+    font-size: 30px;
+    transition: transform 0.5s;
+}
+
+.social-icons i:hover{
+    color: rgb(2, 205, 202);
+    transform: translateY(-5px);
+}
+.downloadBtn{
+    transition: transform 0.5s;
+    width: 60%;
+}
+.downloadBtn:hover{
+transform: translate(15px);
+}
+form input,textarea{
+    margin: 8px;
+    width: 100%;
+    background-color: rgb(119, 118, 118);
+}
+
+.submitButton{
+    padding: 12px;
+    width: 20%;
+    margin-left: 10px;
+    transition: transform 0.5s;
+}
+.submitButton:hover{
+    transform: translate(15px);
+    }

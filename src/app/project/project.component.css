@@ -1,0 +1,22 @@
+
+/* .project{
+    height: 100%;
+} */
+.content{
+    display: flex;
+    padding: 3% 3% 0 3% !important;
+}
+/* .heading{
+    padding: 3% 0 3% 50%;
+} */
+.portfolio{
+    width: 58% !important;
+}
+
+.content .work-list img{
+    border-radius: 20px;
+    width: 70%;
+}
+.content .work-list img:hover{
+    border: 2px solid rgb(236, 20, 20);
+}
