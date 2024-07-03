@@ -122,8 +122,9 @@ nav ul li a::after {
       nav ul li a:hover::after {
         width: 15%;
       }
-      nav ul li{
-        margin-bottom: -12px;
+        nav ul li{
+            margin-bottom: -12px;
+            padding-left:8px
       }
 }
 
@@ -151,6 +152,7 @@ nav ul li a::after {
       }
       nav ul li{
         margin-bottom: -12px;
+        padding-left:8px
       }
 }
 @media screen and (max-width:480px) {
