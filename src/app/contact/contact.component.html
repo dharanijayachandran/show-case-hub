@@ -23,13 +23,35 @@
 </div>
 
 <div class="contact-right col-lg-6">
-    <form [formGroup]="contactForm" >
-            <input type="text"class="form-control" formControlName="name" placeholder="Enter Your Name">
-            <input type="email" class="form-control" formControlName="email" placeholder="Enter Your Email">
-            <textarea name="message" rows="6" placeholder="Your Message" class="form-control" formControlName="message"></textarea>
-            <button type="submit" class="btn btn-primary submitButton" (click)="submitForm()">Submit</button>
+    <form [formGroup]="contactForm" name="submit-to-google-sheet">
+        <div class="form-group">
+            <input type="text"class="form-control" name="Name" formControlName="name" placeholder="Enter Your Name">
+            <div *ngIf="contactForm.controls.name.invalid && (contactForm.controls.name.dirty || contactForm.controls.name.touched)">
+                <small *ngIf="contactForm.controls.name.errors.required" class="text-danger">Name is required.</small>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="email" class="form-control" name="Email" formControlName="email" placeholder="Enter Your Email">
+            <div *ngIf="contactForm.controls.email.invalid && (contactForm.controls.email.dirty || contactForm.controls.email.touched)">
+                <small *ngIf="contactForm.controls.email.errors.required" class="text-danger">Email is required.</small>
+                <small *ngIf="contactForm.controls.email.errors.email" class="text-danger">Invalid email format.</small>
+            </div>
+        </div>
+            <textarea name="message" rows="6" name="Message" placeholder="Your Message" class="form-control" formControlName="message"></textarea>
+            <button type="submit" class="btn btn-primary submitButton" (click)="submitForm()"
+            [disabled]="contactForm.invalid">Submit</button>
     </form>
 </div>
 
 </div>
-
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbz-jExy8bRkIADfal_RhzpOWRfaiVT5njJ0k4f_z3-8qy0uHERAgw-x8TYGTEihejJh/exec'
+    const form = document.forms['submit-to-google-sheet']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+    })
+    </script>
