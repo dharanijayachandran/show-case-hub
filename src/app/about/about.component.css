@@ -16,7 +16,7 @@ font-size: medium;
 }
 @media screen and (max-width:600px) {
     .aboutMeText{
-        margin: 0 10% 6% 0;
+        margin: 0 8% 6% 0;
         line-height: 35px;
     }
     .aboutMeDetail{
@@ -24,6 +24,12 @@ font-size: medium;
         margin-left: 2%;
     }
     .tabSet.container{
-    padding: 50px 0px 0 24px !important
+    padding: 50px 0px 0 15px !important
+    }
+}
+@media screen and (max-width:400px) {
+    .aboutMeText{
+        margin: 0 8% 18% -10%%;
+        line-height: 35px;
     }
 }

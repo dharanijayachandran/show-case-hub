@@ -53,5 +53,17 @@ form input,textarea{
     .submitButton{
         width: 39%;
     }
-    
+    .contactmailnum{
+        margin:28px -14px 35px -6px ;
+    }
 }
+
+    @media screen and (max-width:400px) {
+        
+        .getTouch{
+            margin: 0 0 0 -11px;
+        }
+        .contactContainer{
+           margin: 135px 0px 0px 28px;
+        }
+    }

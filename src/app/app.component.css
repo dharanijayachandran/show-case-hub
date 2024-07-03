@@ -45,7 +45,7 @@ nav ul li a::after {
     width: 350px;
     height: 350px;
     overflow: hidden;
-    left: 11%;
+    left: 2%;
     transition: transform 0.5s ease, box-shadow 0.3s ease; 
 }
 
@@ -71,7 +71,13 @@ nav ul li a::after {
     transition: transform 0.5s ease, box-shadow 0.13s ease; 
     color: rgb(36, 63, 172) !important;
 }
-
+.headerText{
+    text-align: center;
+    margin: 43px 0 12px 225px
+}
+.headerTextColumn{
+    margin: 41px 0 12px;
+}
 
 /* Small screen */
 
@@ -82,10 +88,10 @@ nav ul li a::after {
         width: 200px;
         height: 200px;
         border-radius: 0; 
-        margin-right: 7%;
+        margin: -36px 0 0 18%;
     }
     .imageContainer img {
-        width: 120%;
+        width: 70%;
         border-radius: 0;
     }
     .imageContainer:hover{
@@ -94,6 +100,61 @@ nav ul li a::after {
         box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.2); 
     }
     .headerTextColumn{
-        margin: -29px 0 12px;
+        margin: -64px 0 12px;
+    }
+    .header{
+        margin-top: -22%;
+    }
+    .headerText{
+    margin:44px 61px 25px 131px;
+    }
+    nav ul li a::after {
+        content: '';
+        width: 0;
+        height: 3px;
+        background: rgb(240, 134, 134);
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        transition: .5s;
+      }
+    
+      nav ul li a:hover::after {
+        width: 15%;
+      }
+      nav ul li{
+        margin-bottom: -12px;
+      }
+}
+
+@media screen and (max-width:400px) {
+   .header{margin: -43px 0px 0 -61px;
+    white-space: nowrap;}
+    .imageContainer img {
+        width: 58%;
+    }
+    .navbarResponsive{ left:2%;
+    }
+    nav ul li a::after {
+        content: '';
+        width: 0;
+        height: 3px;
+        background: rgb(240, 134, 134);
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        transition: .5s;
+      }
+    
+      nav ul li a:hover::after {
+        width: 15%;
+      }
+      nav ul li{
+        margin-bottom: -12px;
+      }
+}
+@media screen and (max-width:480px) {
+    .fullContainer{
+
     }
 }

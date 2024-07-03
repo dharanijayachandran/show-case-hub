@@ -8,6 +8,14 @@
 @media screen and (max-width:600px) {
     .Copyright{
         padding: 8px;
+        width: 125%;
+    }
+}
+@media screen and (max-width:400px) {
+    .Copyright{
+        padding: 8px;
+        width: 111%;
+        margin-top: 93%;
     }
     
 }
