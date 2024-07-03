@@ -45,6 +45,7 @@ nav ul li a::after {
     width: 350px;
     height: 350px;
     overflow: hidden;
+    left: 11%;
     transition: transform 0.5s ease, box-shadow 0.3s ease; 
 }
 
@@ -84,11 +85,15 @@ nav ul li a::after {
         margin-right: 7%;
     }
     .imageContainer img {
+        width: 120%;
         border-radius: 0;
     }
     .imageContainer:hover{
         border: 1px solid #ddd; 
         transform: scale(1.05); 
         box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.2); 
+    }
+    .headerTextColumn{
+        margin: -29px 0 12px;
     }
 }
