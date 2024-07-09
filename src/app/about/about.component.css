@@ -33,3 +33,6 @@ font-size: medium;
         line-height: 35px;
     }
 }
+.tab-style{
+    padding: 0.5rem !important;
+}
