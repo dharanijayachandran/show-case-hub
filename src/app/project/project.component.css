@@ -33,7 +33,14 @@
     .heading{
         margin: 0 0 0 30%;
     }
+    .tracker{
+        width: 90% !important;
+        overflow: hidden;
+        height: 205px !important;
+    }
 }
 .tracker{
-    width: 50% !important;
+    width: 48%;
+    height: 200px;
+    overflow: hidden;
 }
