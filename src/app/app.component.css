@@ -28,7 +28,7 @@ nav ul li a::after {
     position: absolute;
     bottom: -6px;
     left: 0;
-    transition: .5s;
+    transition: width 0.3s ease;
   }
 
   nav ul li a:hover::after {
@@ -73,7 +73,8 @@ nav ul li a::after {
 }
 .headerText{
     text-align: center;
-    margin: 43px 0 12px 225px
+    margin: 43px 0 12px 225px;
+    animation: slideInFromLeft 1s ease forwards;
 }
 .headerTextColumn{
     margin: 41px 0 12px;
@@ -89,6 +90,7 @@ nav ul li a::after {
         height: 200px;
         border-radius: 0; 
         margin: -36px 0 0 18%;
+        animation: slideInFromRight 1s ease forwards;
     }
     .imageContainer img {
         width: 70%;
@@ -107,6 +109,7 @@ nav ul li a::after {
     }
     .headerText{
     margin:44px 61px 25px 131px;
+    animation: slideInFromLeft 1s ease forwards;
     }
     nav ul li a::after {
         content: '';
@@ -116,7 +119,7 @@ nav ul li a::after {
         position: absolute;
         bottom: 0px;
         left: 0;
-        transition: .5s;
+        transition: width 0.3s ease;
       }
     
       nav ul li a:hover::after {
@@ -144,7 +147,7 @@ nav ul li a::after {
         position: absolute;
         bottom: 0px;
         left: 0;
-        transition: .5s;
+        transition: width 0.3s ease;
       }
     
       nav ul li a:hover::after {
@@ -158,5 +161,25 @@ nav ul li a::after {
 @media screen and (max-width:480px) {
     .fullContainer{
 
+    }
+}
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
     }
 }
