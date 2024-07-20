@@ -1,69 +1,166 @@
-.container{
-    margin-top: 2%;
-}
-.contactmailnum{
-    margin: 8% 0 7% 0;
-}
-
-.contact p i{
-    margin-right: 10px;
-    color: rgb(2, 205, 202);
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
 }
 
-.social-icons i{
-    color: white;
-    font-size: 30px;
-    transition: transform 0.5s;
+.contactContainer {
+    background: linear-gradient(135deg, #f0f4f8 0%, #e2e6e9 100%);
+    padding: 2rem; /* Adjusted padding for better mobile experience */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 2rem auto; /* Adjusted margin-top for spacing */
 }
 
-.social-icons i:hover{
-    color: rgb(2, 205, 202);
-    transform: translateY(-5px);
+.contact-header {
+    text-align: center;
+    margin-bottom: 1.5rem; /* Reduced margin for better spacing on mobile */
 }
-.downloadBtn{
-    transition: transform 0.5s;
-    width: 60%;
+
+.contact-header h1 {
+    font-size: 2rem; /* Adjusted font size for smaller screens */
+    color: #004d40;
 }
-.downloadBtn:hover{
-transform: translate(15px);
+
+.contact-content {
+    display: flex;
+    flex-direction: column; /* Stacked layout for mobile */
+    gap: 1rem; /* Adjusted gap for better spacing */
 }
-form input,textarea{
-    margin: 8px;
+
+.contact-left,
+.contact-right {
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
+}
+
+.contact-left {
+    max-width: 100%;
+}
+
+.contact-left h3 {
+    font-size: 1.5rem; /* Adjusted font size for better mobile readability */
+    color: #00796b;
+    margin-bottom: 1rem;
+}
+
+.contact-info {
+    margin-bottom: 1rem;
+}
+
+.contact-info p {
+    font-size: 1rem; /* Adjusted font size for mobile */
+    margin: 0.5rem 0;
+    color: #555;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info i {
+    color: #00796b;
+    margin-right: 0.5rem;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center; /* Center icons horizontally */
+    flex-wrap: wrap;
+    gap: 1rem; /* Adjusted spacing between icons */
+    margin-bottom: 1rem;
+}
+
+.social-icon {
+    font-size: 1.5rem; /* Adjusted icon size for mobile */
+    color: #004d40;
+    transition: color 0.3s, transform 0.3s;
+    cursor: pointer;
+}
+
+.social-icon:hover {
+    color: #00796b;
+    transform: scale(1.1);
+}
+
+.contact-info a {
+    color: #00796b;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+    color: #004d40;
+}
+
+.contact-info a i {
+    margin-right: 0.5rem; /* Adjusted spacing for mobile */
+    font-size: 1.125rem; /* Slightly larger icon for better visibility */
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1.25rem;
+    font-size: 0.875rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.downloadBtn {
+    background-color: #00796b;
+    color: #fff;
+}
+
+.downloadBtn:hover {
+    background-color: #004d40;
+    transform: translateY(-2px);
+}
+
+.submitButton {
+    background-color: #009688;
+    color: #fff;
+}
+
+.submitButton:hover {
+    background-color: #00796b;
+    transform: translateY(-2px);
+}
+
+.form-group {
+    margin-bottom: 1rem; /* Adjusted spacing for mobile */
+}
+
+.form-control {
     width: 100%;
-    background-color: rgb(119, 118, 118);
+    padding: 0.5rem;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    background-color: #ffffff;
+    font-size: 0.875rem; /* Adjusted font size for mobile */
 }
 
-.submitButton{
-    padding: 12px;
-    width: 20%;
-    margin-left: 10px;
-    transition: transform 0.5s;
-}
-.submitButton:hover{
-    transform: translate(15px);
-    }
-/* Small Screen */
-@media screen and (max-width:600px) {
-    .downloadBtn{
-        margin: 5% 5% 9% 0;
-    }
-    .contact-right{
-        margin-left: -3%;
-    }
-    .submitButton{
-        width: 39%;
-    }
-    .contactmailnum{
-        margin:28px -14px 35px -6px ;
-    }
+textarea.form-control {
+    resize: vertical;
 }
 
-    @media screen and (max-width:400px) {
-        
-        .getTouch{
-            margin: 0 0 0 -11px;
-        }
-        .contactContainer{
-           margin: 135px 0px 0px 28px;
-        }
+@media screen and (max-width: 768px) {
+    .contact-content {
+        flex-direction: column;
     }
+
+    .contact-left,
+    .contact-right {
+        max-width: 100%;
+        margin-bottom: 1rem; /* Adjusted margin for better spacing */
+    }
+}

@@ -1,38 +1,234 @@
-.aboutMeDetail{
-    font-family: 'Times New Roman', Times, serif;
-    letter-spacing: 3px;
+/* General Container Styling */
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
-.tabSet.container header{
+/* Row Styling */
+.row {
+    margin: 0; /* Remove row margin */
+}
+/* About Me Box Styling */
+.about-me-box {
+    border: 1px solid #e0e0e0; /* Light gray border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Very subtle shadow */
+    padding: 2rem; /* Add padding inside the box */
+    transition: box-shadow 0.3s ease; /* Smooth transition for shadow */
+    margin: 0 auto; /* Center horizontally */
+}
+
+.about-me-box:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slightly more pronounced shadow on hover */
+}
+
+.about-me-title {
+    font-size: 2.5rem; /* Larger title for emphasis */
+    font-weight: 700;
+    color: #007bff; /* Accent color */
+    text-align: center; /* Center align the title */
+    text-transform: uppercase; /* Make title stand out */
+    margin-bottom: 1.5rem; /* Space below the title */
+}
+
+.about-me-content {
+    font-size: 1.2rem; /* Readable font size */
+    line-height: 1.6; /* Improved readability */
+    text-align: justify; /* Justified text for a clean look */
+}
+
+@media (max-width: 768px) {
+    .about-me-title {
+        font-size: 2rem; /* Responsive font size for smaller screens */
+    }
+
+    .about-me-content {
+        font-size: 1rem; /* Responsive font size for smaller screens */
+    }
+}
+
+
+/* Tab Content Styling */
+.tab-content {
+    height: 60%; /* Reduce height to 60% of the original size */
+    padding: 0.75rem; /* Adjust padding for new height */
+    border: 1px solid #ddd; /* Border for separation */
+    border-radius: 0.25rem; /* Rounded corners */
+    overflow: hidden; /* Ensure no content overflows */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+.tab-content header {
     font-weight: bold;
-    margin-top: 13px;
-    color: rgb(227, 222, 222);
+    margin-bottom: 0.5rem; /* Adjust margin for spacing */
 }
-.tab-content{
-font-size: medium;
+
+.tab-content section {
+    margin-bottom: 0.75rem; /* Adjust spacing between sections */
 }
-.project{
+
+.tab-content p, .tab-content ul {
+    margin: 0.25rem 0; /* Reduced margin for spacing */
+}
+
+.tab-content ul {
+    padding-left: 20px; /* Indentation for list items */
+}
+
+.tab-content ul li {
+    margin-bottom: 0.25rem; /* Space between list items */
+}
+
+@media screen and (max-width: 600px) {
+    .tab-content {
+        height: auto; /* Allow height to adjust based on content on small screens */
+        padding: 0.5rem; /* Reduced padding for small screens */
+    }
+}
+
+/* Experience Item Styling */
+.experience-item {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    background-color: #4a4949;
+    position: relative;
+}
+
+.experience-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
     height: 100%;
+    width: 5px;
+    background-color: #007bff; /* Accent color */
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
 }
-@media screen and (max-width:600px) {
-    .aboutMeText{
-        margin: 0 8% 6% 0;
-        line-height: 35px;
-    }
-    .aboutMeDetail{
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        margin-left: 2%;
-    }
-    .tabSet.container{
-    padding: 50px 0px 0 15px !important
+
+.company-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #007bff; /* Accent color */
+    margin-bottom: 0.5rem;
+}
+
+.role {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.details p, .description p {
+    margin: 0.5rem 0;
+}
+
+ul {
+    padding-left: 1.5rem; /* Indentation for list items */
+}
+
+ul li {
+    margin: 0.5rem 0;
+}
+
+@media screen and (max-width: 600px) {
+    .experience-item {
+        padding: 0.75rem; /* Adjust padding for smaller screens */
     }
 }
-@media screen and (max-width:400px) {
-    .aboutMeText{
-        margin: 0 8% 18% -10%;
-        line-height: 35px;
+
+/* Skill Section Styling */
+.skill-section {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    position: relative;
+}
+
+.skill-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 5px;
+    background-color: #007bff; /* Accent color */
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+
+.section-header {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #007bff; /* Accent color */
+    margin-bottom: 0.5rem;
+}
+
+.skill-list {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+@media screen and (max-width: 600px) {
+    .tab-content {
+        padding: 1rem; /* Adjust padding for smaller screens */
+    }
+
+    .skill-section {
+        padding: 0.75rem; /* Adjust padding for smaller screens */
     }
 }
-.tab-style{
-    padding: 0.5rem !important;
+
+/* Education Item Styling */
+.education-item {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    position: relative;
+}
+
+.education-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 5px;
+    background-color: #007bff; /* Accent color */
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+
+.education-header {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #007bff; /* Accent color */
+    margin-bottom: 0.5rem;
+}
+
+.education-details label {
+    display: block;
+    font-weight: bold;
+}
+
+.education-details p {
+    margin: 0.25rem 0;
+}
+
+@media screen and (max-width: 600px) {
+    .tab-content {
+        padding: 1rem; /* Adjust padding for smaller screens */
+    }
+
+    .education-item {
+        padding: 0.75rem; /* Adjust padding for smaller screens */
+    }
 }
