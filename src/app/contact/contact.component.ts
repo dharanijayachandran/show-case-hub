@@ -1,7 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import * as saveAs from 'file-saver';
+import { ServiceService } from '../service.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -10,25 +11,27 @@ import Swal from 'sweetalert2';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit{
-  constructor(private FormBuilder:FormBuilder, private httpClient:HttpClient){}
+  constructor(private FormBuilder:FormBuilder, private httpClient:HttpClient, private service:ServiceService){}
   contactForm:FormGroup | any;
-  private scriptUrl = '/api'; 
 ngOnInit(): void {
   this.contactForm = this.FormBuilder.group({
-    name: [''],
-    email: ['',[Validators.required,Validators.email]],
-    message: ['']
-  })
+    name: ['', Validators.required],
+    email: ['', [Validators.required, Validators.email]],
+    message: ['', Validators.required]
+  });
 }
-submitForm(){
-if(this.contactForm.valid){
-  this.contactForm.reset();
-  Swal.fire("Message Sent Successfully!");
-  this.httpClient.post(this.scriptUrl, this.contactForm.value).subscribe((response:any)=>{
-    
-  })
-
-}
+submitForm() {
+  if (this.contactForm.valid) {
+    const { name, email, message } = this.contactForm.value;
+    this.service.sendEmail(name, email, message).then((response: any) => {
+      this.contactForm.reset();
+      Swal.fire("Message Sent Successfully!");
+      },
+      (error: any) => {
+        console.error('Error sending email:', error);
+      }
+    );
+  }
 }
 
 downloadResume():void{

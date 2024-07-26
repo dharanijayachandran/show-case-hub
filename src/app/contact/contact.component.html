@@ -7,49 +7,44 @@
             <h3>Get In Touch With</h3>
             <div class="contact-info">
                 <!-- Correct mailto link setup -->
-                <p><a href="mailto:dharani18it@gmail.com"><i class="fa-solid fa-envelope"></i> dharani18it@gmail.com</a></p>
+                <p><a href="mailto:dharani18it@gmail.com"><i class="fa-solid fa-envelope"></i> dharani18it@gmail.com</a>
+                </p>
             </div>
             <div class="social-icons">
-                <a href="https://www.linkedin.com/in/dharani-j-48a9001b1/" class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://github.com/dharanijayachandran" class="social-icon"><i class="fa-brands fa-github"></i></a>
-                <a href="https://www.instagram.com/dharanipriya_1806/" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/dharani-j-48a9001b1/" class="social-icon"><i
+                        class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/dharanijayachandran" class="social-icon"><i
+                        class="fa-brands fa-github"></i></a>
+                <a href="https://www.instagram.com/dharanipriya_1806/" class="social-icon"><i
+                        class="fa-brands fa-instagram"></i></a>
             </div>
             <button class="btn downloadBtn" (click)="downloadResume()">Download CV</button>
         </div>
         <div class="contact-right">
-            <form [formGroup]="contactForm" name="submit-to-google-sheet">
-                <div class="form-group">
-                    <input type="text" class="form-control" name="Name" formControlName="name" placeholder="Enter Your Name" />
-                    <div *ngIf="contactForm.controls.name.invalid && (contactForm.controls.name.dirty || contactForm.controls.name.touched)">
-                        <small *ngIf="contactForm.controls.name.errors.required" class="text-danger">Name is required.</small>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <input type="email" class="form-control" name="Email" formControlName="email" placeholder="Enter Your Email" />
-                    <div *ngIf="contactForm.controls.email.invalid && (contactForm.controls.email.dirty || contactForm.controls.email.touched)">
-                        <small *ngIf="contactForm.controls.email.errors.required" class="text-danger">Email is required.</small>
-                        <small *ngIf="contactForm.controls.email.errors.email" class="text-danger">Invalid email format.</small>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <textarea name="message" rows="6" name="Message" placeholder="Your Message" class="form-control" formControlName="message"></textarea>
-                </div>
-                <button type="submit" class="btn submitButton" (click)="submitForm()" [disabled]="contactForm.invalid">Submit</button>
-            </form>
+          <form [formGroup]="contactForm" (ngSubmit)="submitForm()">
+            <div class="form-group">
+              <input type="text" class="form-control" formControlName="name" placeholder="Enter Your Name" />
+              <div *ngIf="contactForm.controls.name.invalid && (contactForm.controls.name.dirty || contactForm.controls.name.touched)">
+                <small *ngIf="contactForm.controls.name.errors.required" class="text-danger">Name is required.</small>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" formControlName="email" placeholder="Enter Your Email" />
+              <div *ngIf="contactForm.controls.email.invalid && (contactForm.controls.email.dirty || contactForm.controls.email.touched)">
+                <small *ngIf="contactForm.controls.email.errors.required" class="text-danger">Email is required.</small>
+                <small *ngIf="contactForm.controls.email.errors.email" class="text-danger">Invalid email format.</small>
+              </div>
+            </div>
+            <div class="form-group">
+              <textarea rows="6" placeholder="Your Message" class="form-control" formControlName="message"></textarea>
+            </div>
+            <button type="submit" class="btn submitButton" [disabled]="contactForm.invalid">Submit</button>
+          </form>
+          
+              
+
         </div>
     </div>
-    
-    
-</div>
 
-<script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbz-jExy8bRkIADfal_RhzpOWRfaiVT5njJ0k4f_z3-8qy0uHERAgw-x8TYGTEihejJh/exec'
-    const form = document.forms['submit-to-google-sheet']
-  
-    form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => console.log('Success!', response))
-        .catch(error => console.error('Error!', error.message))
-    })
-    </script>
+
+</div>
