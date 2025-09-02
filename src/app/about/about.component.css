@@ -1,234 +1,162 @@
-/* General Container Styling */
+/* Container and Row */
 .container {
     max-width: 1140px;
     margin: 0 auto;
     padding: 0 1rem;
 }
 
-/* Row Styling */
 .row {
-    margin: 0; /* Remove row margin */
-}
-/* About Me Box Styling */
-.about-me-box {
-    border: 1px solid #e0e0e0; /* Light gray border */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Very subtle shadow */
-    padding: 2rem; /* Add padding inside the box */
-    transition: box-shadow 0.3s ease; /* Smooth transition for shadow */
-    margin: 0 auto; /* Center horizontally */
+    margin: 0;
+    /* Remove extra margin */
 }
 
-.about-me-box:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slightly more pronounced shadow on hover */
-}
-
-.about-me-title {
-    font-size: 2.5rem; /* Larger title for emphasis */
-    font-weight: 700;
-    color: #007bff; /* Accent color */
-    text-align: center; /* Center align the title */
-    text-transform: uppercase; /* Make title stand out */
-    margin-bottom: 1.5rem; /* Space below the title */
-}
-
-.about-me-content {
-    font-size: 1.2rem; /* Readable font size */
-    line-height: 1.6; /* Improved readability */
-    text-align: justify; /* Justified text for a clean look */
-}
-
-@media (max-width: 768px) {
-    .about-me-title {
-        font-size: 2rem; /* Responsive font size for smaller screens */
-    }
-
-    .about-me-content {
-        font-size: 1rem; /* Responsive font size for smaller screens */
-    }
-}
-
-
-/* Tab Content Styling */
+/* Tab Content */
 .tab-content {
-    height: 60%; /* Reduce height to 60% of the original size */
-    padding: 0.75rem; /* Adjust padding for new height */
-    border: 1px solid #ddd; /* Border for separation */
-    border-radius: 0.25rem; /* Rounded corners */
-    overflow: hidden; /* Ensure no content overflows */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
-}
-
-.tab-content header {
-    font-weight: bold;
-    margin-bottom: 0.5rem; /* Adjust margin for spacing */
-}
-
-.tab-content section {
-    margin-bottom: 0.75rem; /* Adjust spacing between sections */
-}
-
-.tab-content p, .tab-content ul {
-    margin: 0.25rem 0; /* Reduced margin for spacing */
-}
-
-.tab-content ul {
-    padding-left: 20px; /* Indentation for list items */
-}
-
-.tab-content ul li {
-    margin-bottom: 0.25rem; /* Space between list items */
-}
-
-@media screen and (max-width: 600px) {
-    .tab-content {
-        height: auto; /* Allow height to adjust based on content on small screens */
-        padding: 0.5rem; /* Reduced padding for small screens */
-    }
-}
-
-/* Experience Item Styling */
-.experience-item {
-    margin-bottom: 2rem;
     padding: 1rem;
     border: 1px solid #ddd;
     border-radius: 0.5rem;
-    background-color: #4a4949;
-    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    max-height: 400px;
 }
 
-.experience-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 5px;
-    background-color: #007bff; /* Accent color */
-    border-top-left-radius: 0.5rem;
-    border-bottom-left-radius: 0.5rem;
+.tab-content header {
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    color: #007bff;
+}
+
+.tab-content p,
+.tab-content ul {
+    margin-bottom: 1rem;
+}
+
+.tab-content ul {
+    padding-left: 1.5rem;
+}
+
+.tab-content ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Scrollbar for better UX on overflow */
+.tab-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.tab-content::-webkit-scrollbar-thumb {
+    background-color: #007bff;
+    border-radius: 4px;
+}
+
+/* Experience Items */
+.experience-item {
+    border-radius: 8px;
+    border-left: 6px solid #007bff;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    padding: 1.5rem 1.5rem 1rem 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 .company-name {
     font-size: 1.5rem;
-    font-weight: bold;
-    color: #007bff; /* Accent color */
+    font-weight: 700;
+    color: #007bff;
     margin-bottom: 0.5rem;
 }
 
 .role {
     display: block;
-    font-size: 1.1rem;
-    font-weight: 500;
+    font-size: 1.15rem;
+    font-weight: 600;
     margin-bottom: 1rem;
 }
 
-.details p, .description p {
+.details p,
+.description p {
     margin: 0.5rem 0;
 }
 
-ul {
-    padding-left: 1.5rem; /* Indentation for list items */
-}
-
-ul li {
-    margin: 0.5rem 0;
-}
-
-@media screen and (max-width: 600px) {
-    .experience-item {
-        padding: 0.75rem; /* Adjust padding for smaller screens */
-    }
-}
-
-/* Skill Section Styling */
+/* Skills Section */
 .skill-section {
-    margin-bottom: 1.5rem;
-    padding: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 0.5rem;
-    position: relative;
-}
-
-.skill-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 5px;
-    background-color: #007bff; /* Accent color */
-    border-top-left-radius: 0.5rem;
-    border-bottom-left-radius: 0.5rem;
+    border-radius: 8px;
+    border-left: 6px solid #007bff;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 .section-header {
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: #007bff; /* Accent color */
-    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #007bff;
+    margin-bottom: 1rem;
 }
 
 .skill-list {
-    margin: 0;
+    line-height: 1.6;
     font-size: 1rem;
-    line-height: 1.5;
 }
 
-@media screen and (max-width: 600px) {
-    .tab-content {
-        padding: 1rem; /* Adjust padding for smaller screens */
-    }
-
-    .skill-section {
-        padding: 0.75rem; /* Adjust padding for smaller screens */
-    }
-}
-
-/* Education Item Styling */
+/* Education Section */
 .education-item {
-    margin-bottom: 1.5rem;
-    padding: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 0.5rem;
-    position: relative;
-}
-
-.education-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 5px;
-    background-color: #007bff; /* Accent color */
-    border-top-left-radius: 0.5rem;
-    border-bottom-left-radius: 0.5rem;
+    border-radius: 8px;
+    border-left: 6px solid #007bff;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 .education-header {
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: #007bff; /* Accent color */
-    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #007bff;
+    margin-bottom: 0.75rem;
 }
 
 .education-details label {
+    font-weight: 600;
     display: block;
-    font-weight: bold;
+    margin-bottom: 0.25rem;
 }
 
 .education-details p {
     margin: 0.25rem 0;
 }
 
+/* Responsive layout improvements */
 @media screen and (max-width: 600px) {
     .tab-content {
-        padding: 1rem; /* Adjust padding for smaller screens */
+        max-height: none;
+        padding: 1rem;
+        overflow-y: visible;
     }
 
+    .experience-item,
+    .skill-section,
     .education-item {
-        padding: 0.75rem; /* Adjust padding for smaller screens */
+        padding: 1rem;
+        border-left-width: 4px;
+        margin-bottom: 1.5rem;
+    }
+
+    .company-name,
+    .section-header,
+    .education-header {
+        font-size: 1.1rem;
+    }
+
+    .role {
+        font-size: 1rem;
     }
 }

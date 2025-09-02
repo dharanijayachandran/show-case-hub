@@ -17,7 +17,155 @@ body {
     padding-right: 20px;
     transition: color 0.3s, border-bottom 0.3s;
     border-bottom: 2px solid transparent;
+
 }
+
+/* Navbar Styling */
+#navbar {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbarResponsive .navbar-nav .nav-link {
+    font-weight: 600;
+    color: #333333;
+    transition: color 0.3s ease;
+    padding: 10px 15px;
+}
+
+.navbarResponsive .navbar-nav .nav-link:hover,
+.navbarResponsive .navbar-nav .nav-link:focus {
+    color: #007bff;
+    /* Bootstrap primary color */
+    text-decoration: underline;
+}
+
+.navbar-toggler {
+    border: none;
+    outline: none;
+}
+
+/* About Me Box */
+.about-me-box {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    transition: box-shadow 0.3s ease;
+    margin: 2rem auto;
+}
+
+.about-me-box:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.about-me-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #007bff;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.about-me-content {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+    .about-me-title {
+        font-size: 2rem;
+    }
+
+    .about-me-content {
+        font-size: 1rem;
+    }
+}
+
+/* Header Section */
+.header {
+    color: #ffffff;
+    padding: 4rem 2rem;
+    border-radius: 0 0 40px 40px;
+}
+
+.headerText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding-left: 2rem;
+    top: 8rem;
+}
+
+.headerTextColumn p {
+    margin: 0;
+}
+
+.name {
+    font-size: 2.8rem;
+    color: #ffd700;
+    /* Gold color accent */
+    font-weight: 700;
+}
+
+.fs-4 {
+    margin-top: 1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-style: italic;
+}
+
+/* Profile Image */
+.imageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-img {
+    max-width: 300px;
+    width: 100%;
+    border-radius: 50%;
+    border: 5px solid #ffffff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+    .header {
+        text-align: center;
+        border-radius: 0 0 20px 20px;
+        padding: 3rem 1rem;
+    }
+
+    .headerText {
+        padding-left: 0;
+        top: 0;
+    }
+
+    .name {
+        font-size: 2rem;
+    }
+
+    .profile-img {
+        max-width: 200px;
+        margin-top: 1.5rem;
+    }
+}
+
 
 .nav-link:hover {
     color: #007bff;
@@ -26,15 +174,18 @@ body {
 
 .header {
     text-align: center;
-    padding: 10vh 20px; /* Responsive padding */
+    padding: 10vh 20px;
+    /* Responsive padding */
     background-size: cover;
     color: #fff;
     position: relative;
-    margin-bottom: 20px; /* Spacing below header */
+    margin-bottom: 20px;
+    /* Spacing below header */
 }
 
 .header .headerTextColumn {
-    font-size: 2rem; /* Adjust font size for readability */
+    font-size: 2rem;
+    /* Adjust font size for readability */
 }
 
 .header .name {
@@ -53,7 +204,8 @@ body {
     height: 250px;
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s ease;
-    margin: 0 auto; /* Centering image container */
+    margin: 0 auto;
+    /* Centering image container */
     position: relative;
 }
 
@@ -65,7 +217,8 @@ body {
     right: 0;
     bottom: 0;
     border-radius: 50%;
-    background: rgba(0, 0, 0, 0.3); /* Overlay effect */
+    background: rgba(0, 0, 0, 0.3);
+    /* Overlay effect */
     opacity: 0;
     transition: opacity 0.3s;
 }
@@ -94,7 +247,8 @@ body {
     margin-bottom: 20px;
 }
 
-.project, .contact {
+.project,
+.contact {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -129,5 +283,147 @@ body {
     .imageContainer {
         width: 150px;
         height: 150px;
+    }
+}
+
+/* Navbar styling */
+#navbar {
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+}
+
+.navbarResponsive .navbar-nav .nav-link {
+    font-weight: 600;
+    color: #333;
+    padding: 10px 15px;
+    transition: color 0.3s ease;
+}
+
+.navbarResponsive .navbar-nav .nav-link:hover,
+.navbarResponsive .navbar-nav .nav-link:focus {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+/* Header styling */
+.header {
+    background: linear-gradient(135deg, #4e54c8, #8f94fb);
+    color: white;
+    padding: 4rem 2rem;
+    border-radius: 0 0 40px 40px;
+    margin-top: 56px;
+    /* height of navbar so content doesn't go under sticky navbar */
+}
+
+.headerTextColumn {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.name {
+    font-size: 3rem;
+    color: #ffd700;
+    font-weight: 900;
+}
+
+.fs-4 {
+    margin-top: 1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-style: italic;
+}
+
+/* Profile Image */
+.imageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-img {
+    max-width: 280px;
+    border-radius: 50%;
+    border: 5px solid white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+}
+
+/* About Me section */
+.about-me-box p{
+    color: #f9f9f9;
+}
+
+.about-me-box {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 2rem 3rem;
+    margin-bottom: 3rem;
+}
+
+.about-me-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.about-me-content {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #444;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .header {
+        padding: 3rem 1.5rem;
+        border-radius: 0 0 30px 30px;
+    }
+
+    .name {
+        font-size: 2.5rem;
+    }
+
+    .profile-img {
+        max-width: 220px;
+    }
+}
+
+@media (max-width: 576px) {
+    .header {
+        padding: 2rem 1rem;
+        border-radius: 0 0 25px 25px;
+    }
+
+    .about-me-box {
+        padding: 1.5rem 1.5rem;
+    }
+
+    .about-me-content {
+        font-size: 1.1rem;
+    }
+}
+
+.profile-img {
+    max-width: 200px;
+    border-radius: 50%;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 992px) {
+    .headerText {
+        text-align: center;
+        margin-bottom: 1.5rem;
     }
 }
