@@ -33,6 +33,9 @@ export class AboutComponent {
     {
       company: 'AdMax Local',
       role: 'Front End Developer',
+      details: [
+        { label: 'Duration', value: '1 year 11 months' },
+      ],
       points: [
         'Worked as a Front-End Developer at Admax Local, focusing on building and maintaining responsive web applications.',
         'Developed user-friendly interfaces using HTML, CSS, JavaScript, and modern frameworks.',
@@ -48,6 +51,7 @@ export class AboutComponent {
       details: [
         { label: 'Role', value: 'Angular Developer at Empyreal Universe (IoT Platform - Street-light Product)' },
         { label: 'Period', value: '2021 - 2024' },
+        { label: 'Duration', value: '2 years' },
       ],
       points: [
         'Angular developer with 3 years in IoT and healthcare.',
