@@ -1,162 +1,166 @@
-/* Container and Row */
-.container {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 0 1rem;
+/* Tab shell — .nav-tabs itself is themed globally in src/styles.css. */
+
+.about-tabs {
+  flex-wrap: wrap;
 }
 
-.row {
-    margin: 0;
-    /* Remove extra margin */
+.about-panel {
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid var(--border);
+  border-top: 0;
+  border-radius: 0 0 var(--radius) var(--radius);
+  background-color: var(--surface);
+  box-shadow: var(--shadow-sm);
 }
 
-/* Tab Content */
-.tab-content {
-    padding: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow-y: auto;
-    max-height: 400px;
+/* --- Experience timeline -------------------------------------------------- */
+
+.timeline {
+  position: relative;
+  margin: 0;
+  padding: 0 0 0 1.75rem;
+  list-style: none;
 }
 
-.tab-content header {
-    font-weight: 700;
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
-    color: #007bff;
+/* The connecting rail. */
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  left: 0.32rem;
+  width: 2px;
+  background: linear-gradient(var(--accent), transparent);
 }
 
-.tab-content p,
-.tab-content ul {
-    margin-bottom: 1rem;
+.timeline-item {
+  position: relative;
+  padding-bottom: 1.75rem;
 }
 
-.tab-content ul {
-    padding-left: 1.5rem;
+.timeline-item:last-child {
+  padding-bottom: 0;
 }
 
-.tab-content ul li {
-    margin-bottom: 0.5rem;
-}
-
-/* Scrollbar for better UX on overflow */
-.tab-content::-webkit-scrollbar {
-    width: 8px;
-}
-
-.tab-content::-webkit-scrollbar-thumb {
-    background-color: #007bff;
-    border-radius: 4px;
-}
-
-/* Experience Items */
-.experience-item {
-    border-radius: 8px;
-    border-left: 6px solid #007bff;
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    border-right: 1px solid #ddd;
-    padding: 1.5rem 1.5rem 1rem 1.5rem;
-    margin-bottom: 2rem;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  top: 0.45rem;
+  left: -1.75rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  border: 2px solid var(--bg);
+  border-radius: 50%;
+  background-color: var(--accent);
 }
 
 .company-name {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #007bff;
-    margin-bottom: 0.5rem;
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--accent);
 }
 
 .role {
-    display: block;
-    font-size: 1.15rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
+  margin: 0.15rem 0 0.6rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
 }
 
-.details p,
-.description p {
-    margin: 0.5rem 0;
+/* --- Education / skills cards -------------------------------------------- */
+
+.entry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: 1rem;
 }
 
-/* Skills Section */
-.skill-section {
-    border-radius: 8px;
-    border-left: 6px solid #007bff;
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    border-right: 1px solid #ddd;
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+.entry-card {
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius-sm);
+  background-color: var(--surface-2);
 }
 
-.section-header {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: #007bff;
-    margin-bottom: 1rem;
+.entry-title {
+  margin: 0 0 0.4rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--accent);
 }
+
+.entry-institution {
+  margin: 0;
+  font-weight: 600;
+}
+
+.entry-meta {
+  margin: 0.1rem 0 0.6rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* --- Shared detail lists -------------------------------------------------- */
+
+.entry-details {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.15rem 0.5rem;
+  margin: 0 0 0.75rem;
+  font-size: 0.92rem;
+}
+
+.entry-details dt {
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.entry-details dt::after {
+  content: ':';
+}
+
+.entry-details dd {
+  margin: 0;
+}
+
+.entry-points {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+}
+
+.entry-points li {
+  margin-bottom: 0.35rem;
+}
+
+.entry-points li::marker {
+  color: var(--accent);
+}
+
+/* --- Skill chips ---------------------------------------------------------- */
 
 .skill-list {
-    line-height: 1.6;
-    font-size: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-/* Education Section */
-.education-item {
-    border-radius: 8px;
-    border-left: 6px solid #007bff;
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    border-right: 1px solid #ddd;
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-}
+@media (max-width: 575.98px) {
+  .about-tabs {
+    gap: 0.15rem;
+    font-size: 0.9rem;
+  }
 
-.education-header {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: #007bff;
-    margin-bottom: 0.75rem;
-}
+  .timeline {
+    padding-left: 1.4rem;
+  }
 
-.education-details label {
-    font-weight: 600;
-    display: block;
-    margin-bottom: 0.25rem;
-}
-
-.education-details p {
-    margin: 0.25rem 0;
-}
-
-/* Responsive layout improvements */
-@media screen and (max-width: 600px) {
-    .tab-content {
-        max-height: none;
-        padding: 1rem;
-        overflow-y: visible;
-    }
-
-    .experience-item,
-    .skill-section,
-    .education-item {
-        padding: 1rem;
-        border-left-width: 4px;
-        margin-bottom: 1.5rem;
-    }
-
-    .company-name,
-    .section-header,
-    .education-header {
-        font-size: 1.1rem;
-    }
-
-    .role {
-        font-size: 1rem;
-    }
+  .timeline-item::before {
+    left: -1.4rem;
+  }
 }

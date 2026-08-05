@@ -1,50 +1,77 @@
-<div class="contactContainer">
-    <div class="contact-header">
-        <h1>Contact Me</h1>
-    </div>
-    <div class="contact-content">
-        <div class="contact-left">
-            <h3>Get In Touch With</h3>
-            <div class="contact-info">
-                <!-- Correct mailto link setup -->
-                <p><a href="mailto:dharani18it@gmail.com"><i class="fa-solid fa-envelope"></i> dharani18it@gmail.com</a>
-                </p>
-            </div>
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/dharani-j-48a9001b1/" class="social-icon"><i
-                        class="fa-brands fa-linkedin"></i></a>
-                <a href="https://github.com/dharanijayachandran" class="social-icon"><i
-                        class="fa-brands fa-github"></i></a>
-                <a href="https://www.instagram.com/dharanipriya_1806/" class="social-icon"><i
-                        class="fa-brands fa-instagram"></i></a>
-            </div>
-            <button class="btn downloadBtn" (click)="downloadResume()">Download CV</button>
-        </div>
-        <div class="contact-right">
-          <form [formGroup]="contactForm" (ngSubmit)="submitForm()">
-            <div class="form-group">
-              <input type="text" class="form-control" formControlName="name" placeholder="Enter Your Name" />
-              <div *ngIf="contactForm.controls.name.invalid && (contactForm.controls.name.dirty || contactForm.controls.name.touched)">
-                <small *ngIf="contactForm.controls.name.errors.required" class="text-danger">Name is required.</small>
-              </div>
-            </div>
-            <div class="form-group">
-              <input type="email" class="form-control" formControlName="email" placeholder="Enter Your Email" />
-              <div *ngIf="contactForm.controls.email.invalid && (contactForm.controls.email.dirty || contactForm.controls.email.touched)">
-                <small *ngIf="contactForm.controls.email.errors.required" class="text-danger">Email is required.</small>
-                <small *ngIf="contactForm.controls.email.errors.email" class="text-danger">Invalid email format.</small>
-              </div>
-            </div>
-            <div class="form-group">
-              <textarea rows="6" placeholder="Your Message" class="form-control" formControlName="message"></textarea>
-            </div>
-            <button type="submit" class="btn submitButton" [disabled]="contactForm.invalid">Submit</button>
-          </form>
-          
-              
+<div class="contact-grid">
+  <div class="contact-panel card-surface">
+    <h3 class="panel-title">Let's talk</h3>
+    <p class="panel-text">
+      Have a role, a project or a question in mind? Send a message and I'll reply as soon as I can.
+    </p>
 
-        </div>
-    </div>
+    <a class="contact-email" [href]="'mailto:' + email">
+      <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+      <span>{{ email }}</span>
+    </a>
 
+    <ul class="social-icons">
+      <li *ngFor="let link of socialLinks">
+        <a [href]="link.href" [attr.aria-label]="link.label" [title]="link.label"
+          [attr.target]="link.external ? '_blank' : null"
+          [attr.rel]="link.external ? 'noopener noreferrer' : null">
+          <i [class]="link.icon" aria-hidden="true"></i>
+        </a>
+      </li>
+    </ul>
 
+    <a class="btn btn-ghost" [href]="resumePath" download>
+      <i class="fa-solid fa-download" aria-hidden="true"></i> Download CV
+    </a>
+  </div>
+
+  <div class="contact-panel card-surface">
+    <form [formGroup]="contactForm" (ngSubmit)="submitForm()" novalidate>
+      <div class="form-group">
+        <label class="form-label" for="contact-name">Name</label>
+        <input id="contact-name" type="text" class="form-control" formControlName="name"
+          placeholder="Your name" autocomplete="name" [class.is-invalid]="isInvalid(name)"
+          [attr.aria-invalid]="isInvalid(name) ? 'true' : null"
+          [attr.aria-describedby]="isInvalid(name) ? 'contact-name-error' : null">
+        <small class="field-error" id="contact-name-error" role="alert" *ngIf="isInvalid(name)">
+          <ng-container *ngIf="name.errors?.['required']">Please enter your name.</ng-container>
+          <ng-container *ngIf="name.errors?.['minlength']">Please enter at least 2 characters.</ng-container>
+        </small>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="contact-email">Email</label>
+        <input id="contact-email" type="email" class="form-control" formControlName="email"
+          placeholder="you@example.com" autocomplete="email" [class.is-invalid]="isInvalid(emailField)"
+          [attr.aria-invalid]="isInvalid(emailField) ? 'true' : null"
+          [attr.aria-describedby]="isInvalid(emailField) ? 'contact-email-error' : null">
+        <small class="field-error" id="contact-email-error" role="alert" *ngIf="isInvalid(emailField)">
+          <ng-container *ngIf="emailField.errors?.['required']">Please enter your email address.</ng-container>
+          <ng-container *ngIf="emailField.errors?.['email']">
+            That doesn't look like a valid email address.
+          </ng-container>
+        </small>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="contact-message">Message</label>
+        <textarea id="contact-message" rows="6" class="form-control" formControlName="message"
+          placeholder="Tell me a bit about what you have in mind" [class.is-invalid]="isInvalid(message)"
+          [attr.aria-invalid]="isInvalid(message) ? 'true' : null"
+          [attr.aria-describedby]="isInvalid(message) ? 'contact-message-error' : null"></textarea>
+        <small class="field-error" id="contact-message-error" role="alert" *ngIf="isInvalid(message)">
+          <ng-container *ngIf="message.errors?.['required']">Please write a message.</ng-container>
+          <ng-container *ngIf="message.errors?.['minlength']">
+            Please write at least 10 characters so I have some context.
+          </ng-container>
+        </small>
+      </div>
+
+      <button type="submit" class="btn btn-accent submit-btn" [disabled]="sending">
+        <i class="fa-solid" [class.fa-paper-plane]="!sending" [class.fa-spinner]="sending"
+          [class.fa-spin]="sending" aria-hidden="true"></i>
+        {{ sending ? 'Sending…' : 'Send message' }}
+      </button>
+    </form>
+  </div>
 </div>

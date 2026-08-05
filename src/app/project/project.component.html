@@ -1,23 +1,31 @@
-    <div class="fw-bolder project fs-3">
-        <div class="row">
-            <div class="col-lg-5"></div>
-            <div class="col-lg-2 heading mt-4">My Work</div>
-            <div class="col-lg-5"></div>
+<div class="project-grid">
+  <article class="project-card card-surface" *ngFor="let project of projects">
+    <div class="project-media">
+      <img [src]="project.image" [alt]="project.imageAlt" loading="lazy" decoding="async">
+    </div>
 
+    <div class="project-body">
+      <h3 class="project-title">{{ project.title }}</h3>
+      <p class="project-blurb">{{ project.blurb }}</p>
+
+      <ul class="project-tags">
+        <li *ngFor="let tag of project.tags">
+          <span class="tag">{{ tag }}</span>
+        </li>
+      </ul>
+
+      <div class="project-links" *ngIf="project.liveUrl || project.repoUrl">
+        <a class="btn btn-accent" *ngIf="project.liveUrl" [href]="project.liveUrl" target="_blank"
+          rel="noopener noreferrer">
+          <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+          Live demo<span class="visually-hidden"> of {{ project.title }}</span>
+        </a>
+        <a class="btn btn-ghost" *ngIf="project.repoUrl" [href]="project.repoUrl" target="_blank"
+          rel="noopener noreferrer">
+          <i class="fa-brands fa-github" aria-hidden="true"></i>
+          Code<span class="visually-hidden"> for {{ project.title }}</span>
+        </a>
+      </div>
     </div>
-    <div class="content">
-    <div class="work-list">
-    <h2 class="fw-bolder pl-4">Weather </h2>
-    <img src="./assets/weather.avif">
-    </div>
-    <div class="work-list">
-    <h2 class="fw-bolder">Portfolio Website </h2>
-    <img class="portfolio" src="./assets/portfolio.png">
-    </div>
-    <div class="work-list tracker">
-    <h2 class="fw-bolder pr-4">Tracker App </h2> 
-    <img src="./assets/tracker.webp">
-    </div>
-   
-</div>
+  </article>
 </div>

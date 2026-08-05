@@ -1,46 +1,92 @@
-
-/* .project{
-    height: 100%;
-} */
-.content{
-    display: flex;
-    padding: 3% 3% 0 3% !important;
-}
-/* .heading{
-    padding: 3% 0 3% 50%;
-} */
-.portfolio{
-    width: 58% !important;
+.project-grid {
+  display: grid;
+  /* Wraps to 2-up then 1-up on its own — no media queries needed. */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  gap: 1.5rem;
 }
 
-.content .work-list img{
-    border-radius: 20px;
-    width: 70%;
-}
-.content .work-list img:hover{
-    border: 2px solid rgb(236, 20, 20);
+.project-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
-/* Small Screen */
-
-@media screen and (max-width:600px){
-    .content{
-        display: block;
-    }
-    .work-list{
-        margin: 9% 0 5% 5%;
-    }
-    .heading{
-        margin: 0 0 0 30%;
-    }
-    .tracker{
-        width: 90% !important;
-        overflow: hidden;
-        height: 205px !important;
-    }
+.project-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+  box-shadow: var(--shadow);
 }
-.tracker{
-    width: 48%;
-    height: 200px;
-    overflow: hidden;
+
+/* Fixed ratio keeps the grid tidy and prevents layout shift while images load. */
+.project-media {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background-color: var(--surface-2);
+  border-bottom: 1px solid var(--border);
+}
+
+.project-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-media img {
+  transform: scale(1.05);
+}
+
+.project-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1.25rem;
+}
+
+.project-title {
+  margin: 0 0 0.4rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.project-blurb {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  /* margin-top:auto pins the tags + links to the bottom so cards of
+     differing blurb length still line up. */
+  margin: auto 0 0;
+  padding: 1rem 0 0;
+  list-style: none;
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding-top: 1rem;
+}
+
+.project-links .btn {
+  padding: 0.5rem 0.9rem;
+  font-size: 0.875rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card:hover {
+    transform: none;
+  }
+
+  .project-card:hover .project-media img {
+    transform: none;
+  }
 }

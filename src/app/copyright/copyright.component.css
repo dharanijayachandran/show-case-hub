@@ -1,21 +1,23 @@
-.Copyright{
-    width: 100%;
-    text-align: center;
-    padding: 9px;
-    font-weight: 300;
-    background-color: rgb(82, 82, 82);
+.copyright {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem 1rem;
+  margin: 0;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+  text-align: center;
 }
-@media screen and (max-width:600px) {
-    .Copyright{
-        padding: 8px;
-        width: 125%;
-    }
+
+.copyright-note::before {
+  content: '·';
+  margin-right: 0.75rem;
 }
-@media screen and (max-width:400px) {
-    .Copyright{
-        padding: 8px;
-        width: 111%;
-        margin-top: 93%;
-    }
-    
+
+@media (max-width: 420px) {
+  .copyright-note::before {
+    display: none;
+  }
 }

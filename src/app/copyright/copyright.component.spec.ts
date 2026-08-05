@@ -8,9 +8,8 @@ describe('CopyrightComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CopyrightComponent ]
-    })
-    .compileComponents();
+      declarations: [CopyrightComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(CopyrightComponent);
     component = fixture.componentInstance;
@@ -19,5 +18,11 @@ describe('CopyrightComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('renders the current year rather than a hard-coded one', () => {
+    const text = (fixture.nativeElement as HTMLElement).textContent ?? '';
+    expect(text).toContain(String(new Date().getFullYear()));
+    expect(component.year).toBe(new Date().getFullYear());
   });
 });

@@ -1,69 +1,107 @@
-<div class="fullContainer">
-    <div id="header">
-        <div id="navbar">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light navbarResponsive">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#about">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#project">Project</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contact">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-        <div class="container mt-3">
-            <div class="row">
-                <!-- Header intro text -->
-                <div class="col-lg-4 d-flex flex-column justify-content-center fw-bolder headerText">
-                    <p class="fs-3 headerTextColumn">Hi, I am <span class="name">Dharani J</span></p>
-                    <p class="fs-4 mt-3">Full Stack Developer</p>
-                </div>
+<a class="skip-link" href="#main">Skip to main content</a>
 
-                <!-- About Me -->
-                <div class="col-lg-4">
-                    <div class="about-me-box">
-                        <h2 class="about-me-title">About Me</h2>
-                        <p class="about-me-content">
-                            Innovative SDE with 4 Years of Expertise in IoT, UI/UX Design, and Agile Methodologies,
-                            Spring boot. Expert in Crafting Dynamic Applications with Angular Material and Single-SPA,
-                            React.
-                        </p>
-                    </div>
-                </div>
-                <!-- Profile Image -->
-                <div class="col-lg-4 d-flex justify-content-center align-items-center">
-                    <img src="./assets/profile.jpg" alt="Profile Picture" class="profile-img rounded-circle"
-                        style="max-width: 200px;">
-                </div>
-            </div>
-        </div>
+<header class="site-header">
+  <nav class="navbar navbar-expand-lg" aria-label="Main">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" (click)="closeNav()">
+        Dharani&nbsp;<span>J</span>
+      </a>
 
+      <div class="nav-actions">
+        <button type="button" class="icon-btn theme-toggle" (click)="toggleTheme()"
+          [attr.aria-label]="theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'"
+          [title]="theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'">
+          <i class="fa-solid" [class.fa-sun]="theme === 'dark'" [class.fa-moon]="theme === 'light'" aria-hidden="true"></i>
+        </button>
+
+        <button type="button" class="icon-btn nav-burger" (click)="navCollapsed = !navCollapsed"
+          [attr.aria-expanded]="!navCollapsed" aria-controls="primaryNav" aria-label="Toggle navigation menu">
+          <i class="fa-solid" [class.fa-bars]="navCollapsed" [class.fa-xmark]="!navCollapsed" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse" id="primaryNav" [ngbCollapse]="navCollapsed">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item" *ngFor="let link of navLinks">
+            <a class="nav-link" [href]="'#' + link.id" [class.active]="activeSection === link.id"
+              [attr.aria-current]="activeSection === link.id ? 'true' : null" (click)="closeNav()">
+              {{ link.label }}
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
+  </nav>
+</header>
 
+<section class="hero" id="top">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-7 hero-copy">
+        <p class="hero-greeting">Hi, I am</p>
+        <h1 class="hero-name">Dharani J</h1>
+        <p class="hero-role">Full Stack Developer</p>
+        <p class="hero-summary">
+          Innovative SDE with 4 Years of Expertise in IoT, UI/UX Design, and Agile Methodologies,
+          Spring boot. Expert in Crafting Dynamic Applications with Angular Material and Single-SPA,
+          React.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-accent" [href]="resumePath" download>
+            <i class="fa-solid fa-download" aria-hidden="true"></i> Download CV
+          </a>
+          <a class="btn btn-ghost" href="#contact">
+            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Get in touch
+          </a>
+        </div>
+
+        <ul class="hero-social">
+          <li *ngFor="let link of socialLinks">
+            <a [href]="link.href" [attr.aria-label]="link.label" [title]="link.label"
+              [attr.target]="link.external ? '_blank' : null"
+              [attr.rel]="link.external ? 'noopener noreferrer' : null">
+              <i [class]="link.icon" aria-hidden="true"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-lg-5">
+        <div class="hero-photo">
+          <img src="assets/profile.jpg" width="700" height="1241" alt="Portrait of Dharani J">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main id="main">
+  <section class="section" id="about">
     <div class="container">
-        <div class="row about" id="about">
-            <app-about></app-about>
-        </div>
-        <div class="row project" id="project">
-            <app-project></app-project>
-        </div>
-        <div class="row contact" id="contact">
-            <app-contact></app-contact>
-        </div>
+      <p class="section-eyebrow">Background</p>
+      <h2 class="section-title">About <span>Me</span></h2>
+      <app-about></app-about>
     </div>
+  </section>
 
-    <div class="footer" id="copyright">
-        <app-copyright></app-copyright>
+  <section class="section section--alt" id="project">
+    <div class="container">
+      <p class="section-eyebrow">Portfolio</p>
+      <h2 class="section-title">My <span>Work</span></h2>
+      <app-project></app-project>
     </div>
-</div>
-<!-- test -->
+  </section>
+
+  <section class="section" id="contact">
+    <div class="container">
+      <p class="section-eyebrow">Say hello</p>
+      <h2 class="section-title">Get In <span>Touch</span></h2>
+      <app-contact></app-contact>
+    </div>
+  </section>
+</main>
+
+<footer id="copyright">
+  <app-copyright></app-copyright>
+</footer>

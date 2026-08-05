@@ -1,133 +1,61 @@
-<div class="fixed-rectangle">
-    <div class="fixed-rectangle-content">
+<ul ngbNav #nav="ngbNav" class="nav-tabs about-tabs" [(activeId)]="activeTab">
+  <li [ngbNavItem]="'experience'">
+    <a ngbNavLink>Experience</a>
+    <ng-template ngbNavContent>
+      <ol class="timeline">
+        <li class="timeline-item" *ngFor="let job of experience">
+          <h3 class="company-name">{{ job.company }}</h3>
+          <p class="role">{{ job.role }}</p>
 
-        <div class="mt-6 p-4 tab-style">
-            <ngb-tabset>
-                <ngb-tab title="Experience">
-                    <ng-template ngbTabContent>
-                        <div class="tab-content">
+          <dl class="entry-details" *ngIf="job.details?.length">
+            <ng-container *ngFor="let detail of job.details">
+              <dt>{{ detail.label }}</dt>
+              <dd>{{ detail.value }}</dd>
+            </ng-container>
+          </dl>
 
-                            <div class="experience-item">
-                                <header class="company-name">AdMax Local</header>
-                                <label class="role">Front End Developer</label>
-                                <div class="description">
-                                    <p><strong>Description:</strong></p>
-                                    <ul>
-                                        <li>Worked as a Front-End Developer at Admax Local, focusing on building and
-                                            maintaining responsive web applications.</li>
-                                        <li>Developed user-friendly interfaces using HTML, CSS, JavaScript, and modern
-                                            frameworks.</li>
-                                        <li>Optimized website performance to improve load speed and accessibility.</li>
-                                        <li>Collaborated with designers and backend developers to integrate APIs and
-                                            deliver seamless user experiences.</li>
-                                        <li>Implemented UI/UX improvements based on analytics and user feedback.</li>
-                                        <li>Ensured cross-browser and cross-device compatibility for all front-end
-                                            features.</li>
-                                    </ul>
-                                </div>
-                            </div>
+          <ul class="entry-points">
+            <li *ngFor="let point of job.points">{{ point }}</li>
+          </ul>
+        </li>
+      </ol>
+    </ng-template>
+  </li>
 
-                            <div class="experience-item">
-                                <header class="company-name">Imtac India Private Limited</header>
-                                <label class="role">Software Engineer</label>
-                                <div class="details">
-                                    <p><strong>Role:</strong> Angular Developer at Empyreal Universe (IoT Platform -
-                                        Street-light Product)</p>
-                                    <p><strong>Period:</strong> 2021 - 2024</p>
-                                </div>
-                                <div class="description">
-                                    <p><strong>Description:</strong></p>
-                                    <ul>
-                                        <li>Angular developer with 3 years in IoT and healthcare.</li>
-                                        <li>Skilled in Angular UI, Java, Spring Boot, and SQL.</li>
-                                        <li>Experienced with SL-Map and dashboards using Angular Material.</li>
-                                        <li>Proficient in Agile, CLI, and Single-SPA.</li>
-                                        <li>Upgraded Angular projects from CLI 9 to 16.</li>
-                                        <li>Developed interactive web apps with TypeScript, JavaScript, HTML5, CSS,
-                                            JSON, and Bootstrap.</li>
-                                        <li>Integrated RESTful APIs and created SPAs with Angular single SPA.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="experience-item">
-                                <header class="company-name">ICT Health (Informal Collaborate Transform)</header>
-                                <label class="role">Full Stack Developer</label>
-                                <div class="description">
-                                    <p><strong>Description:</strong></p>
-                                    <ul>
-                                        <li>Developed healthcare software using JSF, Oracle, and Java.</li>
-                                        <li>Optimized Oracle DB queries for better performance.</li>
-                                        <li>Implemented ICD 11 and performed code reviews.</li>
-                                        <li>Created a patient portal with Oracle and Java.</li>
-                                        <li>Enhanced user experience and streamlined processes with Java.</li>
-                                        <li>Improved healthcare operations with a scheduling system.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </ng-template>
-                </ngb-tab>
+  <li [ngbNavItem]="'education'">
+    <a ngbNavLink>Education</a>
+    <ng-template ngbNavContent>
+      <div class="entry-grid">
+        <article class="entry-card" *ngFor="let item of education">
+          <h3 class="entry-title">{{ item.qualification }}</h3>
+          <p class="entry-institution">{{ item.institution }}</p>
+          <p class="entry-meta">{{ item.location }}</p>
+          <dl class="entry-details">
+            <dt>Year</dt>
+            <dd>{{ item.year }}</dd>
+            <dt>Percentage</dt>
+            <dd>{{ item.score }}</dd>
+          </dl>
+        </article>
+      </div>
+    </ng-template>
+  </li>
 
-                <ngb-tab title="Education">
-                    <ng-template ngbTabContent>
-                        <div class="tab-content">
-                            <div class="education-item">
-                                <header class="education-header">B.Tech - IT</header>
-                                <div class="education-details">
-                                    <label>E.G.S Pillay Engineering College</label>
-                                    <p>Nagapattinam, TN</p>
-                                    <p><strong>Year:</strong> 2021</p>
-                                    <p><strong>Percentage:</strong> 88%</p>
-                                </div>
-                            </div>
-                            <div class="education-item">
-                                <header class="education-header">Higher Secondary</header>
-                                <div class="education-details">
-                                    <label>St. Theresa's Girls Hr. Sec. School</label>
-                                    <p>Thiruthuraipoondi, TN</p>
-                                    <p><strong>Year:</strong> 2017</p>
-                                    <p><strong>Percentage:</strong> 81%</p>
-                                </div>
-                            </div>
-                            <div class="education-item">
-                                <header class="education-header">SSLC</header>
-                                <div class="education-details">
-                                    <label>Infant Jesus Matric. School</label>
-                                    <p>Thevur, TN</p>
-                                    <p><strong>Year:</strong> 2015</p>
-                                    <p><strong>Percentage:</strong> 96%</p>
-                                </div>
-                            </div>
-                        </div>
-                    </ng-template>
-                </ngb-tab>
+  <li [ngbNavItem]="'skills'">
+    <a ngbNavLink>Skills</a>
+    <ng-template ngbNavContent>
+      <div class="entry-grid">
+        <article class="entry-card" *ngFor="let group of skillGroups">
+          <h3 class="entry-title">{{ group.title }}</h3>
+          <ul class="skill-list">
+            <li *ngFor="let skill of group.skills">
+              <span class="tag">{{ skill }}</span>
+            </li>
+          </ul>
+        </article>
+      </div>
+    </ng-template>
+  </li>
+</ul>
 
-                <ngb-tab title="Skills">
-                    <ng-template ngbTabContent>
-                        <div class="tab-content">
-                            <div class="skill-section">
-                                <header class="section-header">Frontend Technologies</header>
-                                <p class="skill-list">Angular (CLI Version 9 to 16), Bootstrap 5, CSS 3, TypeScript,
-                                    JavaScript, HTML5, Rxjs, JSF, Angular Material.</p>
-                            </div>
-                            <div class="skill-section">
-                                <header class="section-header">Backend Technologies</header>
-                                <p class="skill-list">Java, API Gateway (Apisix), PostgreSQL, Oracle.</p>
-                            </div>
-                            <div class="skill-section">
-                                <header class="section-header">Version Control</header>
-                                <p class="skill-list">Git, SVN</p>
-                            </div>
-                            <div class="skill-section">
-                                <header class="section-header">Tools</header>
-                                <p class="skill-list">Visual Studio Code, GitHub, PgAdmin, Eclipse, Postman, WinSCP,
-                                    PuTTY, Spring Tool Suite, Jira, SQL Developer.</p>
-                            </div>
-                        </div>
-                    </ng-template>
-                </ngb-tab>
-
-            </ngb-tabset>
-        </div>
-    </div>
-</div>
+<div [ngbNavOutlet]="nav" class="about-panel"></div>
