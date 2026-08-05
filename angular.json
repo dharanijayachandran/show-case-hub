@@ -48,7 +48,8 @@
                   "maximumError": "6kb"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "baseHref": "/show-case-hub/"
             },
             "development": {
               "buildOptimizer": false,

@@ -21,13 +21,12 @@ export class ProjectComponent {
   /**
    * TODO(dharani): add `liveUrl` / `repoUrl` for each project — the cards
    * already render "Live demo" and "Code" buttons as soon as a URL exists.
-   * Worth tightening the blurbs and tags to match what each project really does.
    */
   readonly projects: readonly Project[] = [
     {
       title: 'Weather',
       blurb:
-        'A weather app that surfaces current conditions and forecast details in a clean, responsive layout.',
+        'Responsive weather client that presents current conditions and forecast detail in a single uncluttered view, backed by a public REST API.',
       tags: ['Angular', 'TypeScript', 'REST API'],
       image: 'assets/weather.avif',
       imageAlt: 'Screenshot of the Weather app showing current conditions',
@@ -35,7 +34,7 @@ export class ProjectComponent {
     {
       title: 'Portfolio Website',
       blurb:
-        'This site — a single-page Angular portfolio with a light/dark theme, scroll-spy navigation and an email-backed contact form.',
+        'This site — a single-page Angular portfolio with light and dark themes, scroll-spy navigation and an EmailJS-backed contact form.',
       tags: ['Angular 15', 'Bootstrap 5', 'Responsive'],
       image: 'assets/portfolio.webp',
       imageAlt: 'Screenshot of the portfolio website home page',
@@ -43,7 +42,7 @@ export class ProjectComponent {
     {
       title: 'Tracker App',
       blurb:
-        'A tracker application with a dashboard-style interface for reviewing records at a glance.',
+        'Record-tracking application with a dashboard-style interface for reviewing entries and their status at a glance.',
       tags: ['Angular', 'TypeScript', 'Dashboard'],
       image: 'assets/tracker.webp',
       imageAlt: 'Screenshot of the Tracker app dashboard',

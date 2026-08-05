@@ -229,8 +229,27 @@
   margin: 0 auto;
   padding: 6px;
   border-radius: 50%;
+  /* Accent halo comes from the shadow — cheaper than a second pseudo-element. */
+  box-shadow: var(--shadow), 0 0 3rem var(--ring);
+  /* Keeps the negative-z rim from escaping behind the page. */
+  isolation: isolate;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* The gradient rim lives on a pseudo-element so it can spin without the photo. */
+.hero-photo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: 50%;
   background: conic-gradient(from 210deg, var(--accent), var(--gold), var(--accent));
-  box-shadow: var(--shadow);
+  animation: hero-ring-spin 14s linear infinite;
+}
+
+.hero-photo:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow), 0 0 4.5rem var(--accent);
 }
 
 .hero-photo img {
@@ -243,6 +262,13 @@
   /* The source is a tall portrait — bias the crop towards the face. */
   object-position: center 20%;
 }
+
+@keyframes hero-ring-spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
 
 @media (max-width: 991.98px) {
   .hero-copy {
@@ -270,5 +296,14 @@ footer#copyright {
 @media (prefers-reduced-motion: reduce) {
   .hero-social a:hover {
     transform: none;
+  }
+
+  .hero-photo,
+  .hero-photo:hover {
+    transform: none;
+  }
+
+  .hero-photo::before {
+    animation: none;
   }
 }
