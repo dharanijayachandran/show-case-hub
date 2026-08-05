@@ -51,7 +51,7 @@ export class AboutComponent {
       details: [
         { label: 'Role', value: 'Angular Developer at Empyreal Universe (IoT Platform - Street-light Product)' },
         { label: 'Period', value: '2021 - 2024' },
-        { label: 'Duration', value: '2 years' },
+        { label: 'Duration', value: '2 years 10 months' },
       ],
       points: [
         'Angular developer with 3 years in IoT and healthcare.',
