@@ -34,10 +34,10 @@ export class AboutComponent {
       company: 'AdMax Local',
       role: 'Front End Developer',
       details: [
-        { label: 'Duration', value: '1 year 11 months' },
+        { label: 'Duration', value: '2 years' },
       ],
       points: [
-        'Build and maintain responsive, accessible web applications with HTML, CSS, JavaScript and modern frameworks.',
+        'Build and maintain responsive, accessible web applications with angular, react, HTML, CSS, JavaScript and modern frameworks.',
         'Optimize front-end performance to improve load speed, responsiveness and accessibility scores.',
         'Partner with designers and backend engineers to integrate REST APIs into cohesive user journeys.',
         'Refine UI and UX based on analytics and user feedback rather than assumption.',
@@ -74,6 +74,13 @@ export class AboutComponent {
   ];
 
   readonly education: readonly EducationEntry[] = [
+    {
+      qualification: 'M.E (C.S.E)',
+      institution: 'E.G.S Pillay Engineering College',
+      location: 'Nagapattinam, TN',
+      year: '2025 - 2027 - currently pursuing',
+      score: '80%',
+    },
     {
       qualification: 'B.Tech - IT',
       institution: 'E.G.S Pillay Engineering College',
