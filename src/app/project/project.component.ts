@@ -32,22 +32,6 @@ export class ProjectComponent {
       imageAlt: 'Screenshot of the Weather app showing current conditions',
     },
     {
-      title: 'Portfolio Website',
-      blurb:
-        'This site — a single-page Angular portfolio with light and dark themes, scroll-spy navigation and an EmailJS-backed contact form.',
-      tags: ['Angular 15', 'Bootstrap 5', 'Responsive'],
-      image: 'assets/portfolio.webp',
-      imageAlt: 'Screenshot of the portfolio website home page',
-    },
-    {
-      title: 'Tracker App',
-      blurb:
-        'Record-tracking application with a dashboard-style interface for reviewing entries and their status at a glance.',
-      tags: ['Angular', 'TypeScript', 'Dashboard'],
-      image: 'assets/tracker.webp',
-      imageAlt: 'Screenshot of the Tracker app dashboard',
-    },
-    {
       title: 'Markdown Live Previewer',
       blurb:
         'Split-pane Markdown editor with a real-time rendered preview, browser-side autosave, and export to .md or .html — no backend, no build step.',
