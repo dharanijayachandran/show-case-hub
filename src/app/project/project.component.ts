@@ -24,14 +24,6 @@ export class ProjectComponent {
    */
   readonly projects: readonly Project[] = [
     {
-      title: 'Weather',
-      blurb:
-        'Responsive weather client that presents current conditions and forecast detail in a single uncluttered view, backed by a public REST API.',
-      tags: ['Angular', 'TypeScript', 'REST API'],
-      image: 'assets/weather.avif',
-      imageAlt: 'Screenshot of the Weather app showing current conditions',
-    },
-    {
       title: 'Markdown Live Previewer',
       blurb:
         'Split-pane Markdown editor with a real-time rendered preview, browser-side autosave, and export to .md or .html — no backend, no build step.',
