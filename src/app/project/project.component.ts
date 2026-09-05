@@ -57,5 +57,15 @@ export class ProjectComponent {
       liveUrl: 'https://dharanijayachandran.github.io/markdown-previewer/',
       repoUrl: 'https://github.com/dharanijayachandran/markdown-previewer',
     },
+    {
+      title: 'QR Code Generator',
+      blurb:
+        'Turn a link, plain text, Wi-Fi login, email, phone number or contact card into a downloadable QR code — customizable size and colors, entirely client-side.',
+      tags: ['JavaScript', 'HTML5', 'CSS3'],
+      image: 'assets/qr-code-generator.png',
+      imageAlt: 'Screenshot of the QR Code Generator with a generated code',
+      liveUrl: 'https://dharanijayachandran.github.io/qr-code-generator/',
+      repoUrl: 'https://github.com/dharanijayachandran/qr-code-generator',
+    },
   ];
 }
