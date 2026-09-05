@@ -47,5 +47,15 @@ export class ProjectComponent {
       image: 'assets/tracker.webp',
       imageAlt: 'Screenshot of the Tracker app dashboard',
     },
+    {
+      title: 'Markdown Live Previewer',
+      blurb:
+        'Split-pane Markdown editor with a real-time rendered preview, browser-side autosave, and export to .md or .html — no backend, no build step.',
+      tags: ['JavaScript', 'HTML5', 'CSS3'],
+      image: 'assets/markdown-previewer.png',
+      imageAlt: 'Screenshot of the Markdown Live Previewer split-pane editor',
+      liveUrl: 'https://dharanijayachandran.github.io/markdown-previewer/',
+      repoUrl: 'https://github.com/dharanijayachandran/markdown-previewer',
+    },
   ];
 }
