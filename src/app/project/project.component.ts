@@ -61,5 +61,15 @@ export class ProjectComponent {
       liveUrl: 'https://dharanijayachandran.github.io/expense-tracker/',
       repoUrl: 'https://github.com/dharanijayachandran/expense-tracker',
     },
+    {
+      title: 'Password Generator',
+      blurb:
+        'Generate strong random passwords with customizable length and character sets, plus a separate strength checker with a live entropy score — nothing ever leaves your browser.',
+      tags: ['React', 'JavaScript', 'Vite'],
+      image: 'assets/password-generator.png',
+      imageAlt: 'Screenshot of the Password Generator with a generated password and strength checklist',
+      liveUrl: 'https://dharanijayachandran.github.io/password-generator/',
+      repoUrl: 'https://github.com/dharanijayachandran/password-generator',
+    },
   ];
 }
