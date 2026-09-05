@@ -51,5 +51,15 @@ export class ProjectComponent {
       liveUrl: 'https://dharanijayachandran.github.io/qr-code-generator/',
       repoUrl: 'https://github.com/dharanijayachandran/qr-code-generator',
     },
+    {
+      title: 'Expense Tracker',
+      blurb:
+        'Log income and expenses, track a running balance and spending by category, and export everything to CSV — data stays in your browser.',
+      tags: ['Angular', 'TypeScript', 'Local Storage'],
+      image: 'assets/expense-tracker.png',
+      imageAlt: 'Screenshot of the Expense Tracker showing balance, income, expenses and a transaction list',
+      liveUrl: 'https://dharanijayachandran.github.io/expense-tracker/',
+      repoUrl: 'https://github.com/dharanijayachandran/expense-tracker',
+    },
   ];
 }
