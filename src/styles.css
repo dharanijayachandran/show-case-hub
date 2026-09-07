@@ -20,21 +20,22 @@
   --border: #2c3752;
   --text: #e8ecf4;
   --muted: #98a4bb;
-  --accent: #5aa9ff;
-  --accent-strong: #86c0ff;
-  --accent-soft: rgba(90, 169, 255, 0.14);
-  --accent-ink: #07101d;
+  --accent: #2dd4bf;
+  --accent-strong: #5eead4;
+  --accent-soft: rgba(45, 212, 191, 0.14);
+  --accent-ink: #052e2b;
   --gold: #ffd166;
   --danger: #ff8b8b;
   --success: #6ee7a8;
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
-  --ring: rgba(90, 169, 255, 0.35);
-  --hero-glow: radial-gradient(60% 60% at 80% 10%, rgba(90, 169, 255, 0.16), transparent 70%),
+  --ring: rgba(45, 212, 191, 0.35);
+  --hero-glow: radial-gradient(60% 60% at 80% 10%, rgba(45, 212, 191, 0.16), transparent 70%),
                radial-gradient(50% 50% at 10% 20%, rgba(255, 209, 102, 0.10), transparent 70%);
   --radius: 14px;
   --radius-sm: 10px;
   --nav-h: 4.25rem;
+  --font-mono: 'Cascadia Code', 'Fira Code', ui-monospace, 'SFMono-Regular', Consolas, Menlo, monospace;
 
   /* Keep Bootstrap's own components on-theme. */
   --bs-body-bg: var(--bg);
@@ -53,17 +54,17 @@
   --border: #dbe3ef;
   --text: #131a27;
   --muted: #55637c;
-  --accent: #0d63d6;
-  --accent-strong: #0a4ba5;
-  --accent-soft: rgba(13, 99, 214, 0.09);
+  --accent: #0d9488;
+  --accent-strong: #115e59;
+  --accent-soft: rgba(13, 148, 136, 0.09);
   --accent-ink: #ffffff;
   --gold: #8a5a00;
   --danger: #c02626;
   --success: #14734a;
   --shadow: 0 10px 30px rgba(20, 32, 56, 0.10);
   --shadow-sm: 0 2px 8px rgba(20, 32, 56, 0.08);
-  --ring: rgba(13, 99, 214, 0.30);
-  --hero-glow: radial-gradient(60% 60% at 80% 10%, rgba(13, 99, 214, 0.10), transparent 70%),
+  --ring: rgba(13, 148, 136, 0.30);
+  --hero-glow: radial-gradient(60% 60% at 80% 10%, rgba(13, 148, 136, 0.10), transparent 70%),
                radial-gradient(50% 50% at 10% 20%, rgba(255, 190, 80, 0.14), transparent 70%);
 }
 
@@ -134,9 +135,10 @@ img {
 
 .section-eyebrow {
   margin: 0 0 0.35rem;
-  font-size: 0.8rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
   font-weight: 600;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--accent);
 }
@@ -263,9 +265,10 @@ img {
   border-radius: 999px;
   background-color: var(--accent-soft);
   color: var(--accent);
-  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
 }
 
 /* --- Forms --------------------------------------------------------------- */

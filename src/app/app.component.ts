@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, NgZone, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 
-import { RESUME_PATH, SOCIAL_LINKS } from './site-data';
+import { EMAIL, LOCATION, RESUME_PATH, SOCIAL_LINKS } from './site-data';
 import { Theme, ThemeService } from './theme.service';
 
 interface NavLink {
@@ -24,6 +24,8 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   readonly title = 'show-case-hub';
   readonly socialLinks = SOCIAL_LINKS;
   readonly resumePath = RESUME_PATH;
+  readonly email = EMAIL;
+  readonly location = LOCATION;
 
   readonly navLinks: readonly NavLink[] = [
     { id: 'about', label: 'About' },

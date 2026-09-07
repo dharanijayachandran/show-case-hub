@@ -155,9 +155,10 @@
 
 .hero-greeting {
   margin: 0;
-  font-size: 1.05rem;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--accent);
 }
@@ -245,9 +246,10 @@
 
 .hero-stat dt {
   margin: 0;
+  font-family: var(--font-mono);
   font-size: clamp(1.1rem, 2.4vw, 1.4rem);
   font-weight: 800;
-  color: var(--gold);
+  color: var(--accent);
 }
 
 .hero-stat dd {
@@ -328,6 +330,80 @@
 @media (max-width: 420px) {
   .hero-stats {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --- About intro (narrative + quick facts) -------------------------------- */
+
+.about-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 16rem;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: start;
+  margin-bottom: clamp(2rem, 5vw, 3rem);
+}
+
+.about-intro-copy p {
+  margin: 0 0 1.1rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.about-intro-copy p:last-child {
+  margin-bottom: 0;
+}
+
+.about-intro-card {
+  margin: 0;
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background-color: var(--surface);
+}
+
+.about-intro-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.about-intro-row:first-child {
+  padding-top: 0;
+}
+
+.about-intro-row:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.about-intro-row dt {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.about-intro-row dd {
+  margin: 0;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.about-intro-row dd a {
+  color: var(--text);
+}
+
+.about-intro-row dd a:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 767.98px) {
+  .about-intro {
+    grid-template-columns: 1fr;
   }
 }
 

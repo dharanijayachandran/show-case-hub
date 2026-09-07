@@ -90,6 +90,46 @@
     <div class="container">
       <p class="section-eyebrow">Background</p>
       <h2 class="section-title">About <span>Me</span></h2>
+
+      <div class="about-intro">
+        <div class="about-intro-copy">
+          <p>
+            I'm a Frontend Developer at AdMax Local, building the front end of an AI-driven
+            advertising platform — ad creation, testing, automation and performance insights —
+            in Angular and React. Before that I spent almost three years at Imtac India,
+            architecting the street-light management interface and analytics dashboards for an
+            IoT platform used by municipal operators.
+          </p>
+          <p>
+            Earlier still, I built patient-care software in a regulated healthcare environment
+            with Java, JSF and Oracle. The thread through all of it is the same: taking a system
+            from rough requirements to something reliable — reusable components, faster load
+            times, fewer defects, and Angular projects upgraded across half a dozen major
+            versions without breaking production.
+          </p>
+          <p>
+            I care about the details that make software feel solid rather than merely working —
+            accessibility, cross-browser correctness, and code a team can actually build on after
+            I've moved on.
+          </p>
+        </div>
+
+        <dl class="about-intro-card">
+          <div class="about-intro-row">
+            <dt>Based in</dt>
+            <dd>{{ location }}</dd>
+          </div>
+          <div class="about-intro-row">
+            <dt>Focus</dt>
+            <dd>Full Stack Developer</dd>
+          </div>
+          <div class="about-intro-row">
+            <dt>Email</dt>
+            <dd><a [href]="'mailto:' + email">{{ email }}</a></dd>
+          </div>
+        </dl>
+      </div>
+
       <app-about></app-about>
     </div>
   </section>
