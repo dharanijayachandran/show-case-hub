@@ -3,7 +3,7 @@
     <a ngbNavLink>Experience</a>
     <ng-template ngbNavContent>
       <ol class="timeline">
-        <li class="timeline-item" *ngFor="let job of experience">
+        <li class="timeline-item" [class.expanded]="isExpanded(job.company)" *ngFor="let job of experience">
           <h3 class="company-name">{{ job.company }}</h3>
           <p class="role">{{ job.role }}</p>
 
@@ -17,6 +17,12 @@
           <ul class="entry-points">
             <li *ngFor="let point of job.points">{{ point }}</li>
           </ul>
+
+          <button type="button" class="show-more-toggle" *ngIf="job.points.length > collapsedPointCount"
+            (click)="toggleExpanded(job.company)">
+            {{ isExpanded(job.company) ? 'Show less' : 'Show ' + (job.points.length - collapsedPointCount) + ' more' }}
+            <i class="fa-solid" [class.fa-chevron-down]="!isExpanded(job.company)" [class.fa-chevron-up]="isExpanded(job.company)" aria-hidden="true"></i>
+          </button>
         </li>
       </ol>
     </ng-template>

@@ -140,6 +140,10 @@
   color: var(--accent);
 }
 
+.show-more-toggle {
+  display: none;
+}
+
 /* --- Skill chips ---------------------------------------------------------- */
 
 .skill-list {
@@ -163,5 +167,37 @@
 
   .timeline-item::before {
     left: -1.4rem;
+  }
+}
+
+/* Collapse each job to its first few points on mobile — the full resume-synced
+   lists (up to 9 bullets) make for a lot of scrolling on a phone. Desktop
+   always shows everything; this block only exists below the breakpoint. */
+@media (max-width: 767.98px) {
+  .entry-points li:nth-child(n + 4) {
+    display: none;
+  }
+
+  .timeline-item.expanded .entry-points li:nth-child(n + 4) {
+    display: list-item;
+  }
+
+  .show-more-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 0.6rem;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .show-more-toggle i {
+    font-size: 0.7rem;
   }
 }

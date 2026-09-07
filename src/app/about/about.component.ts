@@ -29,6 +29,24 @@ interface SkillGroup {
 export class AboutComponent {
   activeTab = 'experience';
 
+  /** How many bullet points show by default on mobile before "Show more". */
+  readonly collapsedPointCount = 3;
+
+  /** Company names currently expanded to their full bullet list on mobile. */
+  private readonly expandedCompanies = new Set<string>();
+
+  isExpanded(company: string): boolean {
+    return this.expandedCompanies.has(company);
+  }
+
+  toggleExpanded(company: string): void {
+    if (this.expandedCompanies.has(company)) {
+      this.expandedCompanies.delete(company);
+    } else {
+      this.expandedCompanies.add(company);
+    }
+  }
+
   readonly experience: readonly ExperienceEntry[] = [
     {
       company: 'AdMax Local',
