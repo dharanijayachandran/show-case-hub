@@ -5,11 +5,35 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
   gap: 1.5rem;
-  align-items: start;
+  align-items: stretch;
 }
 
 .contact-panel {
+  display: flex;
+  flex-direction: column;
   padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+.contact-panel form {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.contact-panel .form-group:last-of-type {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.contact-panel .form-group:last-of-type textarea {
+  flex: 1;
+  min-height: 8rem;
+}
+
+.contact-panel > .btn {
+  margin-top: auto;
+  align-self: flex-start;
 }
 
 .panel-title {
