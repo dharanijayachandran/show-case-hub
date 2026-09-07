@@ -4,12 +4,15 @@ export interface Project {
   title: string;
   blurb: string;
   tags: string[];
-  image: string;
+  /** Omitted for projects with no UI to screenshot yet (backend-only work in progress). */
+  image?: string;
   /** Describes the screenshot for screen readers. */
-  imageAlt: string;
+  imageAlt?: string;
   /** Link buttons render only when a URL is present. */
   liveUrl?: string;
   repoUrl?: string;
+  /** Short status badge, e.g. "In active development" — omit once finished. */
+  status?: string;
 }
 
 @Component({
@@ -18,9 +21,18 @@ export interface Project {
   styleUrls: ['./project.component.css'],
 })
 export class ProjectComponent {
+  readonly featuredProject: Project = {
+    title: 'Clinic Appointment Booking System',
+    blurb:
+      'Full-stack booking system built to demonstrate production-grade backend engineering. The core problem: two patients try to book the same slot at the same moment — exactly one wins, enforced at the database level with row-level locking and a partial unique constraint, not application-side guessing. Verified with a JUnit test that fires simultaneous bookings.',
+    tags: ['Java 17', 'Spring Boot 3', 'PostgreSQL', 'Angular 18', 'WebSocket', 'Docker'],
+    repoUrl: 'https://github.com/dharanijayachandran/clinic-booking-system',
+    status: 'In active development — Phase 1 (schema + Docker Compose) complete',
+  };
+
   /**
-   * TODO(dharani): add `liveUrl` / `repoUrl` for each project — the cards
-   * already render "Live demo" and "Code" buttons as soon as a URL exists.
+   * TODO(dharani): add `liveUrl` for each project — the cards already render
+   * a "Live demo" button as soon as one is set.
    */
   readonly projects: readonly Project[] = [
     {

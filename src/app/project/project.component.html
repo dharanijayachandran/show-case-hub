@@ -1,3 +1,34 @@
+<article class="featured-card card-surface">
+  <p class="featured-eyebrow">Featured project</p>
+  <h3 class="featured-title">{{ featuredProject.title }}</h3>
+  <p class="featured-status" *ngIf="featuredProject.status">
+    <span class="featured-status-dot" aria-hidden="true"></span>
+    {{ featuredProject.status }}
+  </p>
+  <p class="featured-blurb">{{ featuredProject.blurb }}</p>
+
+  <ul class="project-tags">
+    <li *ngFor="let tag of featuredProject.tags">
+      <span class="tag">{{ tag }}</span>
+    </li>
+  </ul>
+
+  <div class="project-links" *ngIf="featuredProject.liveUrl || featuredProject.repoUrl">
+    <a class="btn btn-accent" *ngIf="featuredProject.liveUrl" [href]="featuredProject.liveUrl" target="_blank"
+      rel="noopener noreferrer">
+      <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+      Live demo<span class="visually-hidden"> of {{ featuredProject.title }}</span>
+    </a>
+    <a class="btn btn-ghost" *ngIf="featuredProject.repoUrl" [href]="featuredProject.repoUrl" target="_blank"
+      rel="noopener noreferrer">
+      <i class="fa-brands fa-github" aria-hidden="true"></i>
+      Code<span class="visually-hidden"> for {{ featuredProject.title }}</span>
+    </a>
+  </div>
+</article>
+
+<p class="section-eyebrow other-projects-eyebrow">Other projects</p>
+
 <div class="project-grid">
   <article class="project-card card-surface" *ngFor="let project of projects">
     <div class="project-media">

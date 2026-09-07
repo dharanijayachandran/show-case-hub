@@ -1,3 +1,84 @@
+/* --- Featured project ------------------------------------------------------ */
+
+.featured-card {
+  position: relative;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  margin-bottom: clamp(2rem, 5vw, 3rem);
+  border: 1px solid var(--border);
+  border-image: linear-gradient(120deg, var(--accent), var(--border) 40%) 1;
+}
+
+.featured-eyebrow {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.featured-title {
+  margin: 0 0 0.6rem;
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  font-weight: 800;
+}
+
+.featured-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 1rem;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background-color: var(--surface-2);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.featured-status-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+  animation: featured-pulse 2s ease-in-out infinite;
+}
+
+@keyframes featured-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.featured-blurb {
+  max-width: 52rem;
+  margin: 0 0 0.25rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.featured-card .project-tags {
+  margin: 1.25rem 0 0;
+  padding: 0;
+}
+
+.featured-card .project-links {
+  padding-top: 1.25rem;
+}
+
+.other-projects-eyebrow {
+  margin-bottom: 1.25rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .featured-status-dot {
+    animation: none;
+  }
+}
+
 .project-grid {
   display: grid;
   /* Wraps to 2-up then 1-up on its own — no media queries needed. */
