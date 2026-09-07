@@ -10,6 +10,11 @@ interface NavLink {
   label: string;
 }
 
+interface HeroStat {
+  value: string;
+  label: string;
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -24,6 +29,13 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     { id: 'about', label: 'About' },
     { id: 'project', label: 'Projects' },
     { id: 'contact', label: 'Contact' },
+  ];
+
+  readonly heroStats: readonly HeroStat[] = [
+    { value: '5+', label: 'Years experience' },
+    { value: '55+', label: 'Components delivered' },
+    { value: '10+', label: 'Production modules' },
+    { value: '35%', label: 'Faster load times' },
   ];
 
   /** Mobile nav starts closed; bound to [ngbCollapse]. */

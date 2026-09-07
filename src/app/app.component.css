@@ -221,6 +221,42 @@
   text-decoration: none;
 }
 
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  max-width: 34rem;
+  margin: 2.25rem 0 0;
+}
+
+.hero-stat {
+  padding: 0.85rem 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background-color: var(--surface);
+  text-align: center;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.hero-stat:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.hero-stat dt {
+  margin: 0;
+  font-size: clamp(1.1rem, 2.4vw, 1.4rem);
+  font-weight: 800;
+  color: var(--gold);
+}
+
+.hero-stat dd {
+  margin: 0.2rem 0 0;
+  font-size: 0.72rem;
+  line-height: 1.25;
+  color: var(--muted);
+}
+
 /* Gradient ring around the portrait. */
 .hero-photo {
   position: relative;
@@ -282,6 +318,16 @@
   .hero-actions,
   .hero-social {
     justify-content: center;
+  }
+
+  .hero-stats {
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-stats {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
