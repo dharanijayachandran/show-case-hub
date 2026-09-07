@@ -15,6 +15,8 @@ export interface SocialLink {
 
 export const EMAIL = 'dharani18it@gmail.com';
 
+export const LOCATION = 'Bangalore, Karnataka';
+
 export const RESUME_PATH = 'assets/J_DHARANI_RESUME.pdf';
 
 export const SOCIAL_LINKS: readonly SocialLink[] = [

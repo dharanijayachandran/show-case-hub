@@ -19,20 +19,51 @@
 }
 
 .panel-text {
-  margin: 0 0 1.25rem;
+  margin: 0 0 1rem;
   color: var(--muted);
 }
 
-.contact-email {
+.availability {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 1.25rem;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background-color: var(--surface-2);
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.availability-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--success);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.contact-detail {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
+  margin: 0;
   font-weight: 600;
   word-break: break-all;
 }
 
-.contact-email i {
+.contact-detail i {
+  width: 1.1rem;
   color: var(--accent);
+  text-align: center;
 }
 
 .social-icons {

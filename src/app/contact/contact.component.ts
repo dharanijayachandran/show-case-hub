@@ -3,7 +3,7 @@ import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
 import Swal, { SweetAlertOptions } from 'sweetalert2';
 
 import { ServiceService } from '../service.service';
-import { EMAIL, RESUME_PATH, SOCIAL_LINKS } from '../site-data';
+import { EMAIL, LOCATION, RESUME_PATH, SOCIAL_LINKS } from '../site-data';
 
 @Component({
   selector: 'app-contact',
@@ -15,6 +15,7 @@ export class ContactComponent {
   private readonly service = inject(ServiceService);
 
   readonly email = EMAIL;
+  readonly location = LOCATION;
   readonly resumePath = RESUME_PATH;
   readonly socialLinks = SOCIAL_LINKS;
 

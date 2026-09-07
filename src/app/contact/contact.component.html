@@ -5,10 +5,21 @@
       Have a role, a project or a question in mind? Send a message and I'll reply as soon as I can.
     </p>
 
-    <a class="contact-email" [href]="'mailto:' + email">
-      <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-      <span>{{ email }}</span>
-    </a>
+    <p class="availability">
+      <span class="availability-dot" aria-hidden="true"></span>
+      Usually replies within 24 hours
+    </p>
+
+    <div class="contact-details">
+      <a class="contact-detail" [href]="'mailto:' + email">
+        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+        <span>{{ email }}</span>
+      </a>
+      <p class="contact-detail">
+        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+        <span>{{ location }}</span>
+      </p>
+    </div>
 
     <ul class="social-icons">
       <li *ngFor="let link of socialLinks">
