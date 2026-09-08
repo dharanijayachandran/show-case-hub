@@ -27,7 +27,7 @@ export class ProjectComponent {
       'Full-stack booking system built to demonstrate production-grade backend engineering. The core problem: two patients try to book the same slot at the same moment — exactly one wins, enforced at the database level with row-level locking and a partial unique constraint, not application-side guessing. Verified with a JUnit test that fires simultaneous bookings.',
     tags: ['Java 17', 'Spring Boot 3', 'PostgreSQL', 'Angular 18', 'WebSocket', 'Docker'],
     repoUrl: 'https://github.com/dharanijayachandran/clinic-booking-system',
-    status: 'In active development — Phase 1 (schema + Docker Compose) complete',
+    status: 'In active development — Phase 2 of 8 (auth: JWT, roles, cookies) complete',
   };
 
   /**
