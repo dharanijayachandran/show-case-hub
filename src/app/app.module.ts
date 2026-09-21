@@ -10,6 +10,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { CopyrightComponent } from './copyright/copyright.component';
 import { ProjectComponent } from './project/project.component';
+import { RevealDirective } from './reveal.directive';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ProjectComponent } from './project/project.component';
     ContactComponent,
     CopyrightComponent,
     AboutComponent,
+    RevealDirective,
   ],
   imports: [
     BrowserModule,

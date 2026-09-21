@@ -1,4 +1,4 @@
-<article class="featured-card card-surface">
+<article class="featured-card card-surface" appReveal>
   <p class="featured-eyebrow">Featured project</p>
   <h3 class="featured-title">{{ featuredProject.title }}</h3>
   <p class="featured-status" *ngIf="featuredProject.status">
@@ -30,7 +30,8 @@
 <p class="section-eyebrow other-projects-eyebrow">Other projects</p>
 
 <div class="project-grid">
-  <article class="project-card card-surface" *ngFor="let project of projects">
+  <article class="project-card card-surface" *ngFor="let project of projects; index as i"
+    [appReveal]="i * 90">
     <div class="project-media">
       <img [src]="project.image" [alt]="project.imageAlt" loading="lazy" decoding="async">
     </div>

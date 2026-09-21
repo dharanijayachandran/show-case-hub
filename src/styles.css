@@ -121,6 +121,26 @@ img {
   border-radius: 4px;
 }
 
+/* --- Scroll reveal ------------------------------------------------------- */
+
+/* Applied by RevealDirective, which only adds .revealed once the element has
+   been scrolled to. Transform and opacity only, so the animation stays on the
+   compositor and never triggers layout. */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.22, 0.61, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: none;
+  /* Dropped once the entrance is done — leaving it set keeps a layer around
+     for the life of the page for no benefit. */
+  will-change: auto;
+}
+
 /* --- Layout primitives --------------------------------------------------- */
 
 .section {
@@ -134,6 +154,9 @@ img {
 }
 
 .section-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
   margin: 0 0 0.35rem;
   font-family: var(--font-mono);
   font-size: 0.78rem;
@@ -141,6 +164,22 @@ img {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--accent);
+}
+
+/* Editorial index (01 / 02 / 03) plus a rule that runs off to the right —
+   gives the sections a sense of sequence instead of three equal blocks. */
+.section-eyebrow[data-index]::before {
+  content: attr(data-index);
+  opacity: 0.55;
+}
+
+.section-eyebrow::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  max-width: 6rem;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  opacity: 0.5;
 }
 
 .section-title {

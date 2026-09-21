@@ -153,6 +153,40 @@
   overflow: hidden;
 }
 
+/*
+ * Slow-drifting aurora behind the hero. Two large radial gradients on a
+ * single pseudo-element, animated with transform only so the whole thing
+ * stays on the compositor — no repaint, no layout, and it costs nothing on
+ * scroll. Sits behind content via a negative z-index on an isolated stacking
+ * context, and is switched off entirely under prefers-reduced-motion.
+ */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: -30%;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(38% 38% at 22% 32%, var(--accent-soft), transparent 70%),
+    radial-gradient(32% 32% at 78% 62%, rgba(255, 209, 102, 0.1), transparent 70%);
+  animation: hero-aurora 24s ease-in-out infinite alternate;
+}
+
+/* Keeps hero content above the aurora without touching every child. */
+.hero > .container {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes hero-aurora {
+  from {
+    transform: translate3d(-3%, -2%, 0) scale(1);
+  }
+  to {
+    transform: translate3d(4%, 3%, 0) scale(1.12);
+  }
+}
+
 .hero-greeting {
   margin: 0;
   font-family: var(--font-mono);
@@ -426,6 +460,10 @@ footer#copyright {
   }
 
   .hero-photo::before {
+    animation: none;
+  }
+
+  .hero::before {
     animation: none;
   }
 }
